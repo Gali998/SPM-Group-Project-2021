@@ -1,0 +1,132 @@
+/*Footer Start*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+#foot{
+	width:100%;
+	height:250px;
+	background:#2a4d81;
+	float:left;
+}
+
+#foot1{
+	width:1200px;
+	height:250px;
+	margin:auto;
+}
+
+#first{
+	width:380px;
+	height:200px;
+	font-size:100px;
+	float:left;
+	color:white;
+	font-family:Tw Cen MT Condensed;
+	margin-top:30px;
+	margin-left:50px;
+    /* background: red; */
+}
+
+#second{
+	width:200px;
+	height:200px;
+	font-size:25px;
+	float:left;
+	color:white;
+	font-family:Yu Gothic UI;
+	text-align:center;
+	margin-top:80px;
+	margin-left:80px;
+}
+
+#address1{
+	font-size:15px;
+}
+
+#third{
+	width:250px;
+	height:160px;
+	float:left;
+	margin-top:80px;
+	margin-left:150px;
+}
+
+#tel{
+	color:white;
+	font-size:20px;
+	font-family:Yu Gothic UI;
+	text-align:center;
+}
+
+#social{
+	width:270px;
+	height:40px;
+	margin-top:30px;
+}
+
+#facebook{
+	width:40px;
+	height:40px;
+	float:left;
+	margin-left:16px;
+}
+
+#youtube{
+	width:40px;
+	height:30px;
+	float:left;
+	margin-left:10px;
+	/* margin-top:8px; */
+}
+
+#pinterest{
+	width:40px;
+	height:30px;
+	float:left;
+	margin-left:5px;
+	/* margin-top:8px; */
+}
+
+#twitter{
+	width:50px;
+	height:30px;
+	float:left;
+	margin-left:5px;
+	/* margin-top:8px; */
+}
+
+#instagram{
+	width:40px;
+	height:40px;
+	float:left;
+	margin-left:5px;
+}
+
+#bottom-bar{
+	width:100%;
+	height:50px;
+	background:#2a4d81;
+	margin-top:2px;
+	padding-bottom:20px;
+	float:left;
+}
+
+#bottom-bar1{
+	width:1200px;
+	height:40px;
+	margin:auto;
+	padding-bottom:20px;
+    /* background: red; */
+}
+
+#content{
+	padding-top:10px;
+	padding-bottom:10px;
+	color:white;
+	font-size:17px;
+}
+
+/*Footer End*/
