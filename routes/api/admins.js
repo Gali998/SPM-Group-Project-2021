@@ -8,6 +8,35 @@ const validateLoginInput = require('../../validation/login');
 const validateUpdateUserInput = require('../../validation/updateAdmin');
 const Admin = require('../../models/Admin');
 
+router.post('/register', (req, res) => {
+    const { errors, isValid } = validateRegisterInput(req.body);
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+    Admin.findOne({ email: req.body.email }).then(user => {
+        if (user) {
+            return res.status(400).json({ email: 'Email already exists' });
+        } else {
+            const newAdmin = new Admin({
+                name: req.body.name,
+                email: req.body.email,
+                password: req.body.password
+            });
+            bcrypt.genSalt(10, (err, salt) => {
+                bcrypt.hash(newAdmin.password, salt, (err, hash) => {
+                    if (err) throw err;
+                    newAdmin.password = hash;
+                    newAdmin
+                        .save()
+                        .then(user => {
+                            return res.status(200).json({message: 'Admin added successfully. Refreshing data...'})
+                        }).catch(err => console.log(err));
+                });
+            });
+        }
+    });
+});
+
 router.post('/user-add', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
     if (!isValid) {
