@@ -78,8 +78,8 @@ class Admins extends Component {
         this.config = {
             page_size: 10,
             length_menu: [ 10, 20, 50 ],
-            filename: "Users",
-            no_data_text: 'No user found!',
+            filename: "Admin",
+            no_data_text: 'No admin found!',
             button: {
                 excel: true,
                 print: true,
@@ -170,7 +170,7 @@ class Admins extends Component {
                         <div className="container-fluid">
                             <button className="btn btn-link mt-3" id="menu-toggle"><FontAwesomeIcon icon={faList}/></button>
                             <button className="btn btn-outline-primary float-right mt-3 mr-2" data-toggle="modal" data-target="#add-user-modal"><FontAwesomeIcon icon={faPlus}/> Add Admin</button>
-                            <h1 className="mt-2 text-primary">Admins List</h1>
+                            <h1 className="mt-2 text-primary">Admin List</h1>
                             <ReactDatatable
                                 config={this.config}
                                 records={this.state.records}
