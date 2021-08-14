@@ -11,6 +11,7 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import ContactUs from "./ContactUs";
+import AboutUs from "./AboutUs";
 
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -46,6 +47,10 @@ class App extends Component {
                             <Route exact path={"/"}>
                                 <ContactUs/>
                             </Route>
+                            <Route exact path={"/about-us"}>
+                                <AboutUs/>
+                            </Route>
+
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/login" component={Login} />
                             <Switch>

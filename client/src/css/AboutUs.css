@@ -1,0 +1,197 @@
+.aboutus{
+    text-align: center;
+    color: white;
+    height:30%;
+}
+
+#headline{
+    color: gray;
+    font-family: "Comic Sans MS";
+}
+
+#aboutcarzone{
+    color: black;
+    font-weight: bold;
+    padding: 20px 10px 10px 10px;
+}
+
+#background{
+    background-image: url(../images/car.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height:78%;
+    width:100%;
+}
+
+#benifits{
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.listitem{
+    padding: 10px 10px 10px 10px;
+    font-weight: 500;
+    font-size: 20px;
+    color: darkblue;
+}
+
+#list1{
+    margin-top: 14px;
+    margin-left: 450px;
+}
+
+#list2{
+    margin-top: -166px;
+    margin-left: 965px;
+}
+
+.container1{
+    height:50%;
+    width:75%;
+    margin-left: 14%;
+    margin-top: 1%;
+}
+
+.container2{
+    background-color: #eeeeee;
+    padding: 40px;
+    margin-top: 4px;
+}
+
+#mtitle{
+    color: dodgerblue;
+    font-weight: bold;
+    font-family: "Comic Sans MS";
+    font-size: 40px;
+}
+
+#vtitle{
+    color: dodgerblue;
+    font-weight: bold;
+    font-family: "Comic Sans MS";
+    font-size: 40px;
+}
+
+.detail{
+    text-align: left;
+}
+
+#ourcompany{
+    text-align: center;
+}
+
+#description{
+    color: black;
+    font-size: 20px;
+    text-align: justify;
+}
+
+#visiondiv{
+    margin-left: 10px;
+    opacity: 0.7;
+    margin-top: 85px;
+}
+
+#visiondiv:hover{
+    margin-left: 10px;
+    opacity: 1;
+}
+
+#vdesc{
+    font-size: 25px;
+    color: black;
+}
+
+#mdesc{
+    font-size: 25px;
+    color: black;
+}
+
+#missiondiv{
+    margin-left: 662px;
+    margin-top: 10px;
+    width:10px;
+    height: 20px;
+    opacity: 0.7;
+}
+
+#missiondiv:hover{
+    margin-left: 662px;
+    margin-top: 10px;
+    width:10px;
+    height: 20px;
+    opacity: 1;
+}
+
+#vision{
+    float:left;
+    color: black;
+    padding: 10px 10px 10px 10px;
+    margin-right: 10px;
+    width: 636px;
+}
+
+#mission{
+    position:relative;
+    color: black;
+    padding: 10px 10px 10px 10px;
+    width: 636px;
+    height: 196px;
+}
+
+.cars{
+    width: 100%;
+    height: 75%
+}
+
+#benifitdiv{
+    background-color: white;
+    height:219px;
+    width:100%;
+}
+
+.image{
+    border-radius: 85%;
+    height:150px;
+    width:150px;
+}
+
+#img1{
+    margin-left: 20%;
+    padding: 10px 10px 10px 20px;
+}
+
+#img2{
+   margin-left: 45%;
+    margin-top: -235px;
+    padding: 10px 10px 10px 20px;
+}
+
+#img3{
+    margin-left: 69%;
+    margin-top: -235px;
+    padding: 10px 10px 10px 10px;
+}
+
+#team{
+    background-color: #eeeeee;
+}
+
+#title1{
+    text-align: center;
+    margin-left: -1165px;
+    font-weight: bold;
+}
+
+#title2{
+    text-align: center;
+    margin-left: -749px;
+    font-weight: bold;
+}
+
+#title3{
+    text-align: center;
+    margin-left: -355px;
+    font-weight: bold;
+}
