@@ -248,7 +248,7 @@ class ReservationUpdateModal extends React.Component {
                                     form="update-user"
                                     type="submit"
                                     className="btn btn-primary">
-                                    Update Customer
+                                    Update Reservation
                                 </button>
                             </div>
                         </div>

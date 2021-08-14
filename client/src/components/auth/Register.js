@@ -140,6 +140,21 @@ class Register extends Component {
                                     <span className="red-text">{errors.password2}</span>
                                 </div>
                                 <br/>
+                                {/* <center>
+                                <div className="col s12" style={{ paddingLeft: "11.250px" }}>
+                                    <input
+                                        style={{
+                                            width: "150px",
+                                            borderRadius: "3px",
+                                            letterSpacing: "1.5px",
+                                            marginTop: "1rem"
+                                        }}
+                                        type="reset" style={{background: 'white', padding: '20px 47px 20px 47px', marginTop: '10px'}}
+                                        className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                                       value="Reset" 
+                                    />
+                                </div>
+                                </center> */}
                                 <center>
                                 <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                                     <button

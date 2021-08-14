@@ -31,8 +31,8 @@ class Dashboard extends Component {
                                 <div className="col-sm-3 p-sm-2">
                                     <div className="card bg-primary text-white shadow-lg">
                                         <div className="card-body">
-                                            <h5 className="card-title"><b>Admins</b></h5>
-                                            <p className="card-text"><div style={{color:'white'}}>Check the registered Admins.</div></p>
+                                            <h5 className="card-title"><b>Admin</b></h5>
+                                            <p className="card-text"><div style={{color:'white'}}>Check the registered Admin</div></p>
                                             <Link to="/admins" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Admins</Link>
                                         </div>
                                     </div>
@@ -41,7 +41,7 @@ class Dashboard extends Component {
                                     <div className="card bg-primary text-white shadow-lg">
                                         <div className="card-body">
                                             <h5 className="card-title"><b>Customers</b></h5>
-                                            <p className="card-text"><div style={{color:'white'}}>Check the registered Customers.</div></p>
+                                            <p className="card-text"><div style={{color:'white'}}>Check the registered Customers</div></p>
                                             <Link to="/customers" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Customers</Link>
                                         </div>
                                     </div>
@@ -50,7 +50,7 @@ class Dashboard extends Component {
                                     <div className="card bg-primary text-white shadow-lg">
                                         <div className="card-body">
                                             <h5 className="card-title"><b>Reservations</b></h5>
-                                            <p className="card-text"><div style={{color:'white'}}>Check the Reservations.</div></p>
+                                            <p className="card-text"><div style={{color:'white'}}>Check the Reservations</div></p>
                                             <Link to="/reservations" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Reservations</Link>
                                         </div>
                                     </div>
@@ -59,7 +59,7 @@ class Dashboard extends Component {
                                     <div className="card bg-primary text-white shadow-lg">
                                         <div className="card-body">
                                             <h5 className="card-title"><b>Car List</b></h5>
-                                            <p className="card-text"><div style={{color:'white'}}>Check the Car List.</div></p>
+                                            <p className="card-text"><div style={{color:'white'}}>Check the Car List</div></p>
                                             <Link to="/cars" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Car List</Link>
                                         </div>
                                     </div>

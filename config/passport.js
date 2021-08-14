@@ -3,7 +3,7 @@ const ExtractJwt = require("passport-jwt").ExtractJwt;
 const mongoose = require("mongoose");
 const Admin = mongoose.model("admin");
 const Customer = mongoose.model("customer");
-// const Car = mongoose.model("car");
+const Car = mongoose.model("car");
 const Reservation = mongoose.model("reservation");
 const keys = require("../config/keys");
 
@@ -42,20 +42,20 @@ module.exports = passport => {
     );
 };
 
-// module.exports = passport => {
-//     passport.use(
-//         new JwtStrategy(opts, (jwt_payload, done) => {
-//             Car.findById(jwt_payload.id)
-//                 .then(user => {
-//                     if (user) {
-//                         return done(null, user);
-//                     }
-//                     return done(null, false);
-//                 })
-//                 .catch(err => console.log(err));
-//         })
-//     );
-// };
+module.exports = passport => {
+    passport.use(
+        new JwtStrategy(opts, (jwt_payload, done) => {
+            Car.findById(jwt_payload.id)
+                .then(user => {
+                    if (user) {
+                        return done(null, user);
+                    }
+                    return done(null, false);
+                })
+                .catch(err => console.log(err));
+        })
+    );
+};
 
 module.exports = passport => {
     passport.use(

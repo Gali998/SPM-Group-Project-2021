@@ -205,7 +205,7 @@ class ReservationAddModal extends React.Component {
                                     form="add-user"
                                     type="submit"
                                     className="btn btn-primary">
-                                    Add customer
+                                    Add Reservation
                                 </button>
                             </div>
                         </div>

@@ -10,7 +10,7 @@ import {
 export const registerUser = (userData, history) => dispatch => {
     axios
         .post("/api/admins/register", userData)
-        .then(res => history.push("/login"))
+        .then(res => history.push("/dashboard"))
         .catch(err =>
             dispatch({
                 type: GET_ERRORS,
