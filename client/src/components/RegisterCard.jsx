@@ -16,7 +16,7 @@ function RegisterCardUI() {
             <div id="editor-background">
                 <div id="editorMain-background">
 
-                    <Link id="link" to="#">
+                    <Link id="link" to="/register">
                         <div id="des">
                             <div className="editor-home">Admin Register</div>
                         </div>
