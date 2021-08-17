@@ -8,7 +8,7 @@ const customers = require('./routes/api/customers');
 const cars = require('./routes/api/cars');
 const reservations = require('./routes/api/reservations');
 const cors = require('cors');
-const stripe = require("stripe")("");
+// const stripe = require("stripe")("");
 const uuid = require("uuid");
 
 require('./config/passport')(passport);
