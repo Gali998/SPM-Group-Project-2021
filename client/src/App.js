@@ -46,10 +46,16 @@ class App extends Component {
                 <Router>
                     <div className="App">
                         <Switch>
-                            <Route exact path={"/"}>
+                            {/* <Route exact path={"/"}>
                                 <ContactUs/>
                             </Route>
                             <Route exact path={"/about-us"}>
+                                <AboutUs/>
+                            </Route> */}
+                            <Route exact path={"/contact-us"}>
+                                <ContactUs/>
+                            </Route>
+                            <Route exact path={"/"}>
                                 <AboutUs/>
                             </Route>
                             <Route exact path="/login-ui" component={LoginCardUI}/>
