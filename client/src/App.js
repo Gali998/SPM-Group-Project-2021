@@ -10,6 +10,8 @@ import store from "./store";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
+import LoginCardUI from "./components/LoginCardUI";
+import RegisterCardUI from "./components/RegisterCard";
 import ContactUs from "./ContactUs";
 import AboutUs from "./AboutUs";
 
@@ -50,6 +52,8 @@ class App extends Component {
                             <Route exact path={"/about-us"}>
                                 <AboutUs/>
                             </Route>
+                            <Route exact path="/login-ui" component={LoginCardUI}/>
+                            <Route exact path = "/register-ui" component={RegisterCardUI}/>
 
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/login" component={Login} />
