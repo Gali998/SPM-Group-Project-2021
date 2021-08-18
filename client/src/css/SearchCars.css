@@ -1,0 +1,15 @@
+h1{
+    color: dodgerblue;
+    font-weight: bold;
+    text-align: center;
+}
+
+#measure1{
+    margin-left: 1372px;
+    margin-top: 10px;
+}
+
+#measure2{
+    height: 50%;
+    width: 100%;
+}
