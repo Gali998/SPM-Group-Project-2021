@@ -14,6 +14,7 @@ import LoginCardUI from "./components/LoginCardUI";
 import RegisterCardUI from "./components/RegisterCard";
 import ContactUs from "./ContactUs";
 import AboutUs from "./AboutUs";
+import SearchCars from "./components/pages/SearchCars";
 
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -51,6 +52,9 @@ class App extends Component {
                             </Route>
                             <Route exact path={"/about-us"}>
                                 <AboutUs/>
+                            </Route>
+                            <Route exact path={"/search-cars"}>
+                                <SearchCars/>
                             </Route>
 
 
