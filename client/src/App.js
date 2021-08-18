@@ -52,6 +52,8 @@ class App extends Component {
                             <Route exact path={"/about-us"}>
                                 <AboutUs/>
                             </Route>
+
+
                             <Route exact path="/login-ui" component={LoginCardUI}/>
                             <Route exact path = "/register-ui" component={RegisterCardUI}/>
 
