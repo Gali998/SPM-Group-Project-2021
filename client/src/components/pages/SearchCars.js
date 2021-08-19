@@ -12,8 +12,11 @@ export default class SearchCars extends React.Component{
         super(props);
 
         this.state = {
+            filter : "",
             car: []
         }
+
+        this.searchText = this.searchText.bind(this);
     }
 
     componentDidMount() {
@@ -32,8 +35,17 @@ export default class SearchCars extends React.Component{
         });
     }
 
+    searchText(e) {
+        this.setState({filter : e.target.value});
+    };
 
     render(){
+        let {filter,car} = this.state;
+        let dataSearch = car.filter(item => {
+            return Object.keys(item).some(key =>
+                typeof item[key]==="string" && item[key].toLowerCase().includes(filter.toLowerCase()))
+        });
+
         return(
             <div>
                 <Header />
@@ -47,9 +59,12 @@ export default class SearchCars extends React.Component{
                                type="search"
                                className="form-control"
                                placeholder="Search"
+                               name="searchTerm"
+                               onChange={this.searchText}
+                               value={filter}
                         />
                     </div>
-                    <button type="button" className="btn btn-primary" onSubmit={this.onSubmit}>
+                    <button type="button" className="btn btn-primary">
                         <i className="fa fa-search"></i>
                     </button>
                 </div>
@@ -64,7 +79,19 @@ export default class SearchCars extends React.Component{
                         </tr>
                         </thead>
                         <tbody>
-                            {this.carList()}
+                            {/*{this.carList()}*/}
+                            {(dataSearch.map(item =>
+                                <tr>
+                                    <td>
+                                        {item.carName}
+                                    </td>
+                                    <td>
+                                        {item.description}
+                                    </td>
+                                </tr>
+
+
+                            ))}
                         </tbody>
                     </table>
 
