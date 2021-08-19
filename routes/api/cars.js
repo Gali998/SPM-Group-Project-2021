@@ -65,17 +65,5 @@ router.post('/user-update', (req, res) => {
     });
 });
 
-// router.post('/search-car', (req,res)=>{
-//     const carPattern = new RegExp("^" +req.body.query);
-//
-//     Car.find({carName:{$regex:carPattern}})
-//         .then(user=>{
-//             res.json({user})
-//         }).catch(err=>{
-//             console.log(err);
-//     })
-// })
-
-
 
 module.exports = router;
