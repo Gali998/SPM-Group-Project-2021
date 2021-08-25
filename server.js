@@ -9,6 +9,8 @@ const cars = require('./routes/api/cars');
 const reservations = require('./routes/api/reservations');
 const cors = require('cors');
 
+const uuid = require("uuid");
+
 require('./config/passport')(passport);
 
 const app = express();
