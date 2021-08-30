@@ -13,7 +13,7 @@ function RegisterCardUI() {
 
             {/*Header End */}
 
-            <div id="editor-background">
+            <div id="editor-background1">
                 <div id="editorMain-background">
 
                     <Link id="link" to="/register">
