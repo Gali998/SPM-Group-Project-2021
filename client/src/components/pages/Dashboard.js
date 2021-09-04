@@ -64,6 +64,15 @@ class Dashboard extends Component {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="col-sm-3 p-sm-2">
+                                    <div className="card bg-primary text-white shadow-lg">
+                                        <div className="card-body">
+                                            <h5 className="card-title"><b>Payment Report</b></h5>
+                                            <p className="card-text"><div style={{color:'white'}}>Check the Payment Report</div></p>
+                                            <Link to="/payment-report" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Payment Report</Link>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

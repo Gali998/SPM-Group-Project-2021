@@ -27,6 +27,7 @@ import Admins from "./components/pages/Admins";
 import Customer from "./components/pages/Customers";
 import reservations from "./components/pages/Reservations";
 import Car from "./components/pages/Cars";
+import PaymentReport from "./components/pages/PaymentReport";
 
 if (localStorage.jwtToken) {
     const token = localStorage.jwtToken;
@@ -70,6 +71,7 @@ class App extends Component {
                                 <PrivateRoute exact path="/customers" component={Customer} />
                                 <PrivateRoute exact path="/reservations" component={reservations} />
                                 <PrivateRoute exact path="/cars" component={Car} />
+                                <PrivateRoute exact path="/payment-report" component={PaymentReport} />
                             </Switch>
                             <Route exact path="*" component={NotFound} />
                         </Switch>
