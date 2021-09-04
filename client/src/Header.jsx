@@ -48,29 +48,18 @@ export default class Header extends React.Component{
                         <nav className="site-navigation text-right ml-auto " role="navigation">
 
                             <ul className="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                            <li><Link to="#" className="nav-link">Home</Link></li>
-                            <li><Link to="/about-us" className="nav-link">About Us</Link></li>
-                            <li><Link to="/" className="nav-link">Contact Us</Link></li>
-                            <li><Link to="/register-ui" className="nav-link" id="">SignUp Now</Link></li>
-                            <li><Link to="/login-ui" className="nav-link">SignIn Now</Link></li>
+                                <li><Link to="#" className="nav-link">Home</Link></li>
+                                <li><Link to="/about-us" className="nav-link">About Us</Link></li>
+                                <li><Link to="/" className="nav-link">Contact Us</Link></li>
+                                <li><Link to="/search-cars" className="nav-link" id="">Our Cars</Link></li>
+                                <li><Link to="/landing" className="nav-link" id="">Packages</Link></li>
+                                <li><Link to="/register-ui" className="nav-link" id="">SignUp Now</Link></li>
+                                <li><Link to="/login-ui" className="nav-link">SignIn Now</Link></li>
                             </ul>
-
-
 
                         </nav>
 
-                            <div className="input-group" style={{marginLeft:'1135px', marginTop:'-48px'}}>
-                                <div className="form-outline">
-                                    <input id="search-focus" type="search" id="form1" className="form-control" placeholder="Search"/>
-                                </div>
-                                <button type="button" className="btn btn-primary">
-                                    <i className="fa fa-search"></i>
-                                </button>
-                            </div>
-
                         </div>
-
-
 
                         <div className="toggle-button d-inline-block d-lg-none"><Link to="#" className="site-menu-toggle py-5 js-menu-toggle text-black"><span className="icon-menu h3"></span></Link></div>
 
