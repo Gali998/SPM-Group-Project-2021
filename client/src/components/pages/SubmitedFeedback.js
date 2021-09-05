@@ -6,40 +6,47 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 
 export default class SubmitedFeedback extends React.Component{
-    props;
-    
+
     constructor() {
         super();
         this.state = {
-                name: '',
-                rating: '',
-                usability: '',
-                service: '',
-                comment:''
-        }  
-        
+            name: '',
+            rating: '',
+            usability: '',
+            service: '',
+            comment: ''
+        }
+
+        this.getData = this.getData.bind(this);
     }
-    
+
+    componentWillReceiveProps(nextProps) {
+        this.getData();
+    }
+
     componentDidMount() {
+        this.getData();
+    }
+
+    getData(){
 
         const id = localStorage.getItem('id');
 
         axios.get(`http://localhost:1234/api/feedbacks/feedback-data/${id}`)
-        .then(response => {
-            this.setState({ 
-                name: response.data.name,
-                rating: response.data.rating,
-                usability: response.data.usability,
-                service: response.data.service,
-                comment: response.data.comment
-             })
-            console.log(response.data);
-
-           
-        })
-        .catch(function (error) {
-            console.log(error);
-        }) 
+            .then(response => {
+                this.setState({
+                    id: response.data.id,
+                    name: response.data.name,
+                    rating: response.data.rating,
+                    usability: response.data.usability,
+                    service: response.data.service,
+                    comment: response.data.comment
+                })
+                console.log(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
     }
 
     render(){
@@ -58,7 +65,7 @@ export default class SubmitedFeedback extends React.Component{
                         
                         <div className="card-body" >
                                 <h5 className="card-title">Rating   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{this.state.rating}</h5>
-                                <h5 className="card-title">Usabilty &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{this.state.usability}</h5>
+                                <h5 className="card-title">Usability &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{this.state.usability}</h5>
                                 <h5 className="card-title">Service  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{this.state.service}</h5>
                                 <h5 className="card-title">Comment  &nbsp;&nbsp;:&nbsp;{this.state.comment}</h5>
                                 <br/>

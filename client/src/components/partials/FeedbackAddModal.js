@@ -109,7 +109,7 @@ class FeedbackAddModal extends React.Component{
                                             {/*<br/>*/}
 
                                             <input
-                                                style={{marginLeft:"20px"}}
+                                                style={{marginLeft:"63px"}}
                                                 type="radio"
                                                 name="two"
                                                 id="rating"
@@ -119,7 +119,7 @@ class FeedbackAddModal extends React.Component{
                                             <label style={{marginLeft:"10px"}}>Two</label>
 
                                             <input
-                                                style={{marginLeft:"20px"}}
+                                                style={{marginLeft:"52px"}}
                                                 type="radio"
                                                 name="three"
                                                 id="rating"
@@ -129,7 +129,7 @@ class FeedbackAddModal extends React.Component{
                                             <label style={{marginLeft:"10px"}}>Three</label>
 
                                             <input
-                                                style={{marginLeft:"20px"}}
+                                                style={{marginLeft:"56px"}}
                                                 type="radio"
                                                 name="four"
                                                 id="rating"
@@ -139,7 +139,7 @@ class FeedbackAddModal extends React.Component{
                                             <label style={{marginLeft:"10px"}}>Four</label>
 
                                             <input
-                                                style={{marginLeft:"20px"}}
+                                                style={{marginLeft:"56px"}}
                                                 type="radio"
                                                 name="five"
                                                 id="rating"
@@ -169,7 +169,7 @@ class FeedbackAddModal extends React.Component{
                                             <label style={{marginLeft:"10px"}}>Poor</label>
 
                                             <input
-                                                style={{marginLeft:"20px"}}
+                                                style={{marginLeft:"113px"}}
                                                 type="radio"
                                                 name="satisfactory"
                                                 id="usability"
@@ -179,7 +179,7 @@ class FeedbackAddModal extends React.Component{
                                             <label style={{marginLeft:"10px"}}>Satisfactory</label>
 
                                             <input
-                                                style={{marginLeft:"20px"}}
+                                                style={{marginLeft:"68px"}}
                                                 type="radio"
                                                 name="very good"
                                                 id="usability"
@@ -200,33 +200,33 @@ class FeedbackAddModal extends React.Component{
                                     <div>
                                         <input
                                             type="radio"
-                                            name="poor"
+                                            name="Must Improve"
                                             id="service"
-                                            value="poor"
-                                            checked={"poor"=== this.state.service}
+                                            value="Must Improve"
+                                            checked={"Must Improve"=== this.state.service}
                                             onChange={this.onChange}
                                             className={classnames( {invalid: errors.service})}/>
-                                        <label style={{marginLeft:"10px"}}>Poor</label>
+                                        <label style={{marginLeft:"10px"}}>Must Improve</label>
 
                                         <input
-                                            style={{marginLeft:"20px"}}
+                                            style={{marginLeft:"49px"}}
                                             type="radio"
-                                            name="satisfactory"
+                                            name="average"
                                             id="service"
-                                            value="satisfactory"
-                                            checked={"satisfactory"=== this.state.service}
+                                            value="average"
+                                            checked={"average"=== this.state.service}
                                             onChange={this.onChange}/>
-                                        <label style={{marginLeft:"10px"}}>Satisfactory</label>
+                                        <label style={{marginLeft:"10px"}}>Average</label>
 
                                         <input
-                                            style={{marginLeft:"20px"}}
+                                            style={{marginLeft:"91px"}}
                                             type="radio"
-                                            name="very good"
+                                            name="excellent"
                                             id="service"
-                                            value="verygood"
-                                            checked={"verygood"=== this.state.service}
+                                            value="excellent"
+                                            checked={"excellent"=== this.state.service}
                                             onChange={this.onChange}/>
-                                        <label style={{marginLeft:"10px"}}>Very Good</label>
+                                        <label style={{marginLeft:"10px"}}>Excellent</label>
                                     </div>
 
                                 </div>
