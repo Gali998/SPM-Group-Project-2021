@@ -5,6 +5,7 @@ const Admin = mongoose.model("admin");
 const Customer = mongoose.model("customer");
 const Car = mongoose.model("car");
 const Reservation = mongoose.model("reservation");
+const Feedback = mongoose.model("feedback");
 const keys = require("../config/keys");
 
 const opts = {};
@@ -61,6 +62,21 @@ module.exports = passport => {
     passport.use(
         new JwtStrategy(opts, (jwt_payload, done) => {
             Reservation.findById(jwt_payload.id)
+                .then(user => {
+                    if (user) {
+                        return done(null, user);
+                    }
+                    return done(null, false);
+                })
+                .catch(err => console.log(err));
+        })
+    );
+};
+
+module.exports = passport => {
+    passport.use(
+        new JwtStrategy(opts, (jwt_payload, done) => {
+            Feedback.findById(jwt_payload.id)
                 .then(user => {
                     if (user) {
                         return done(null, user);

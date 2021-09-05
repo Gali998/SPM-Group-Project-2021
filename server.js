@@ -7,6 +7,7 @@ const admins = require('./routes/api/admins');
 const customers = require('./routes/api/customers');
 const cars = require('./routes/api/cars');
 const reservations = require('./routes/api/reservations');
+const feedback = require('./routes/api/feedbacks');
 const cors = require('cors');
 
 const uuid = require("uuid");
@@ -48,6 +49,8 @@ app.use('/api/admins', admins);
 app.use('/api/customers', customers);
 app.use('/api/cars', cars);
 app.use('/api/reservations', reservations);
+app.use('/api/feedbacks', feedback);
+
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 

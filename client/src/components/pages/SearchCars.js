@@ -1,8 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import Header from '../../Header';
 import Footer from '../../Footer';
-import SearchCarsCss from '../../css/SearchCars.css';
+import  '../../css/SearchCars.css';
 import axios from 'axios';
 import CarRow from './CarRow';
 
@@ -53,7 +52,7 @@ export default class SearchCars extends React.Component{
 
                 <h1>Search Results</h1>
 
-                <div className="input-group" id="measure1" >
+                <div className="input-group" id="carsearchbar" >
                     <div className="form-outline">
                         <input id="search-focus"
                                type="search"
@@ -69,9 +68,8 @@ export default class SearchCars extends React.Component{
                     </button>
                 </div>
 
-                <div id="measure2">
-
-                    <table className="table">
+                <div id="cartable">
+                    <table className="table table-bordered">
                         <thead className="thead-dark">
                         <tr>
                             <th scope="col">Car Name</th>

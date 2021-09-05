@@ -1,11 +1,12 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import './css/AboutUs.css';
 import person1 from './images/person1.png';
 import person2 from './images/person2.png';
 import person3 from './images/person3.png';
+
 
 export default class AboutUs extends React.Component{
 
@@ -128,7 +129,7 @@ export default class AboutUs extends React.Component{
                 </div>
 
                 {/*footer*/}
-                <Footer />
+               <Footer/>
             </div>
         );
     }

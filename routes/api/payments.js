@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 const validateRegisterInput = require('../../validation/AddCar');
 const validateUpdateUserInput = require('../../validation/updateCar');
-const Car = require('../../models/Car');
+const Payment = require('../../models/Payment');
 
-router.post('/user-add', (req, res) => {
+router.post('/payment-add', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
     if (!isValid) {
         return res.status(400).json(errors);
@@ -18,11 +18,11 @@ router.post('/user-add', (req, res) => {
                 description: req.body.description,
                 carCount: req.body.carCount
             });
-                newCar
-                    .save()
-                    .then(user => {
-                        return res.status(200).json({message: 'Car added successfully. Refreshing data...'})
-                    }).catch(err => console.log(err));
+            newCar
+                .save()
+                .then(user => {
+                    return res.status(200).json({message: 'Car added successfully. Refreshing data...'})
+                }).catch(err => console.log(err));
         }
     });
 });
@@ -64,5 +64,8 @@ router.post('/user-update', (req, res) => {
         }
     });
 });
+
+
+
 
 module.exports = router;

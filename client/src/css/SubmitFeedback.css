@@ -14,38 +14,41 @@ tr{
     padding: 15px;
 }
 
-#carsearchbar{
-    margin-left: 1372px;
-    margin-top: -5px;
-    padding: 10px 10px 10px 10px;
-}
 
-#cartable{
-    height: 1000px;
+#feedbacktable{
+    height: 45%;
     width: 75%;
     margin-left: 219px;
-    margin-top: 16px;
+    margin-top: 93px;
 }
 
 #btnedit{
-   background-color: dodgerblue;
+    background-color: dodgerblue;
     width:109px;
     height: 50px;
+    text-decoration-color: white;
+    font-weight: bold;
+    border: none;
+    color: white;
 }
 
 #btndelete{
     margin-left: 10px;
     background-color: red;
     width:110px;
+    height: 50px;
+    font-weight: bold;
+    border: none;
+    color: white;
 }
 
 #btn1{
-    margin-left: -61px;
-    margin-top: 20px;
+    margin-left: 127px;
+    margin-top: -10px;
 }
 
 #btn2{
-    margin-left: 150px;
-    margin-top: -59px;
+    margin-left: 328px;
+    margin-top: -57px;
     margin-right:-150px ;
 }

@@ -15,6 +15,11 @@ import RegisterCardUI from "./components/RegisterCard";
 import ContactUs from "./ContactUs";
 import AboutUs from "./AboutUs";
 import SearchCars from "./components/pages/SearchCars";
+import Feedback from "./components/partials/FeedbackAddModal";
+import FeedbackUpdate from "./components/partials/FeedbackUpdateModal";
+import PaymentReports from "./components/pages/PaymentReports";
+import Payment from "./components/pages/Payment";
+import SubmitedFeedback from "./components/pages/SubmitedFeedback";
 
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -27,6 +32,7 @@ import Admins from "./components/pages/Admins";
 import Customer from "./components/pages/Customers";
 import reservations from "./components/pages/Reservations";
 import Car from "./components/pages/Cars";
+
 
 if (localStorage.jwtToken) {
     const token = localStorage.jwtToken;
@@ -56,7 +62,21 @@ class App extends Component {
                             <Route exact path={"/search-cars"}>
                                 <SearchCars/>
                             </Route>
-
+                            <Route exact path={"/feedback"}>
+                                <Feedback/>
+                            </Route>
+                            <Route exact path={"/feedbackupdate"}>
+                                <FeedbackUpdate/>
+                            </Route>
+                            <Route exact path={"/payment-reports"}>
+                                <PaymentReports/>
+                            </Route>
+                            <Route exact path={"/payment"}>
+                                <Payment/>
+                            </Route>
+                            <Route exact path={"/submittedfeedback"}>
+                                <SubmitedFeedback/>
+                            </Route>
 
                             <Route exact path="/login-ui" component={LoginCardUI}/>
                             <Route exact path = "/register-ui" component={RegisterCardUI}/>
