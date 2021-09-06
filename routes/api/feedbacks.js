@@ -32,24 +32,6 @@ router.post('/feedback-add', (req, res) => {
     );
 });
 
-// router.get('/feedback-data', (req, res) => {
-//     Feedback.findById().then(data => {
-//         if (data) {
-//             return res.status(200).send(data);
-//         }
-//     });
-// });
-
-// router.get('/feedback-data', (req, res) => {
-//     Customer.find({}).select(['-id']).then(user => {
-//         if (user) {
-//             return res.status(200).send(user);
-//         }
-//     });
-// });
-
-
-
 router.get('/feedback-data/:id', (req, res) => {
     Feedback.findById(req.params.id).then(data => {
         if (data) {
@@ -58,13 +40,13 @@ router.get('/feedback-data/:id', (req, res) => {
     });
 });
 
-// router.post('/feedback-delete', (req, res) => {
-//     Feedback.deleteOne({ _id: req.body._id}).then(data => {
-//         if (data) {
-//             return res.status(200).json({message: 'Feedback deleted successfully.', success: true})
-//         }
-//     });
-// });
+router.delete('/feedback-delete/:id', (req, res) => {
+    Feedback.deleteOne({ id: req.body.id}).then(data => {
+        if (data) {
+            return res.status(200).json({message: 'Feedback deleted successfully.', success: true})
+        }
+    });
+});
 
 router.post('/feedback-edit', (req, res) => {
     const { errors, isValid } = validateUpdateUserInput(req.body);

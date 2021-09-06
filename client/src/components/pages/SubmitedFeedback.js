@@ -18,6 +18,8 @@ export default class SubmitedFeedback extends React.Component{
         }
 
         this.getData = this.getData.bind(this);
+        this.deleteFeedback = this.deleteFeedback.bind(this);
+
     }
 
     componentWillReceiveProps(nextProps) {
@@ -47,7 +49,22 @@ export default class SubmitedFeedback extends React.Component{
             .catch(function (error) {
                 console.log(error);
             })
-    }
+    };
+
+    deleteFeedback(){
+        const id = localStorage.getItem('id');
+
+        axios.delete(`http://localhost:1234/api/feedbacks/feedback-delete/${id}`)
+            .then(response => {
+                const result=response.status
+                console.log(result);
+                alert("Feedback Deleted")
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    };
+
 
     render(){
 
@@ -62,23 +79,23 @@ export default class SubmitedFeedback extends React.Component{
                         <div className="card-header">
                             <h6 style={{fontSize:"25px"}}>{this.state.name}</h6>
                         </div>
-                        
-                        <div className="card-body" >
-                                <h5 className="card-title">Rating   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{this.state.rating}</h5>
-                                <h5 className="card-title">Usability &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{this.state.usability}</h5>
-                                <h5 className="card-title">Service  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{this.state.service}</h5>
-                                <h5 className="card-title">Comment  &nbsp;&nbsp;:&nbsp;{this.state.comment}</h5>
-                                <br/>
 
-                                <div id="btn1">
+                        <div className="card-body" >
+                            <h5 className="card-title">Rating   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{this.state.rating}</h5>
+                            <h5 className="card-title">Usability &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{this.state.usability}</h5>
+                            <h5 className="card-title">Service  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{this.state.service}</h5>
+                            <h5 className="card-title">Comment  &nbsp;&nbsp;:&nbsp;{this.state.comment}</h5>
+                            <br/>
+
+                            <div id="btn1">
                                 <Link to="/FeedbackUpdate" className="nav-link" ><button id="btnedit">Edit</button></Link>
-                                </div>
-                                <div id="btn2">
-                                <button id="btndelete">Delete</button>
-                                </div>
+                            </div>
+                            <div id="btn2">
+                                <button id="btndelete" onClick={this.deleteFeedback}>Delete</button>
+                            </div>
 
                         </div>
-                  
+
                     </div>
                 </div>
 
@@ -88,4 +105,7 @@ export default class SubmitedFeedback extends React.Component{
             </div>
         );
     }
-}
+
+    }
+
+
