@@ -4,6 +4,8 @@ import i8 from './images/i8.jpg';
 import jaguar from './images/jaguar.jpeg';
 import sclass from './images/sclass.jpg';
 import premio from './images/premio.jpg';
+import premiow from './images/premiow.jpg';
+import axio from './images/axio.jpg';
 
 export default[
     {
@@ -11,7 +13,7 @@ export default[
         image:a8black,
         title:'Audi A8',
         category:'Audi',
-        description:'Super luxury Car'
+        description:'Luxury car with best packages'
     },
     {
         id:2,
@@ -25,14 +27,14 @@ export default[
         image:i8,
         title:'BMW i8',
         category:'BMW',
-        description:'Super luxury car with affrodable price'
+        description:'Super luxury car for weddings'
     },
     {
         id:4,
         image:jaguar,
         title:'Jaguar',
         category:'Jaguar',
-        description:'Super luxury car with affrodable price'
+        description:'Amaze the most stunning event with best car'
     },
     {
         id:5,
@@ -47,6 +49,20 @@ export default[
         title:'Toyota Premio',
         category:'Toyota',
         description:'Best service with comfortable and luxury cars'
+    },
+    {
+        id:7,
+        image:premiow,
+        title:'Toyota Premio',
+        category:'Toyota',
+        description:'To make the best moment in your life worth.Make the best choice'
+    },
+    {
+        id:8,
+        image:axio,
+        title:'Toyota Axio',
+        category:'Toyota',
+        description:'Best choice for comfortable drive'
     }
 
 ];
