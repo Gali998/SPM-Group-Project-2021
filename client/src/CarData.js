@@ -3,6 +3,7 @@ import audia8 from './images/audia8.jpg';
 import i8 from './images/i8.jpg';
 import jaguar from './images/jaguar.jpeg';
 import sclass from './images/sclass.jpg';
+import premio from './images/premio.jpg';
 
 export default[
     {
@@ -39,6 +40,13 @@ export default[
         title:'Mercedes-Benz S class',
         category:'Benz',
         description:'Super luxury car with affrodable price'
+    },
+    {
+        id:6,
+        image:premio,
+        title:'Toyota Premio',
+        category:'Toyota',
+        description:'Best service with comfortable and luxury cars'
     }
 
 ];
