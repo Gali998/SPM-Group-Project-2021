@@ -48,9 +48,9 @@ export default class Header extends React.Component{
                         <nav className="site-navigation text-right ml-auto " role="navigation">
 
                             <ul className="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
-                                <li><Link to="#" className="nav-link">Home</Link></li>
+                                <li><Link to="/" className="nav-link">Home</Link></li>
                                 <li><Link to="/about-us" className="nav-link">About Us</Link></li>
-                                <li><Link to="/" className="nav-link">Contact Us</Link></li>
+                                <li><Link to="/contact-us" className="nav-link">Contact Us</Link></li>
                                 <li><Link to="/search-cars" className="nav-link" id="">Our Cars</Link></li>
                                 <li><Link to="/landing" className="nav-link" id="">Packages</Link></li>
                                 <li><Link to="/register-ui" className="nav-link" id="">SignUp Now</Link></li>

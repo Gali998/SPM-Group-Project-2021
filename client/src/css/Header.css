@@ -64,7 +64,9 @@ body {
       position: absolute;
       right: 0px; }
     .site-navbar .site-logo {
-      position: absolute;
+      position: relative;
+      right:750px;
+      top:15px;
       font-size: 2rem;
       text-transform: uppercase;
       font-weight: 900;

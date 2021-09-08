@@ -6,6 +6,8 @@ import NotFound from "./components/layout/NotFound";
 import { Provider } from "react-redux";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Register from "./components/auth/Register";
+import UserRegister from "./components/auth/UserRegister";
+import UserLogin from "./components/auth/UserLogin";
 import store from "./store";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
@@ -28,6 +30,10 @@ import Customer from "./components/pages/Customers";
 import reservations from "./components/pages/Reservations";
 import Car from "./components/pages/Cars";
 import PaymentReport from "./components/pages/PaymentReport";
+import Home from "./Home";
+import {Collapse} from "@material-ui/core";
+import Employees from "./components/pages/Employees";
+import UserDashboard from "./components/pages/UserDashboard";
 
 if (localStorage.jwtToken) {
     const token = localStorage.jwtToken;
@@ -49,6 +55,9 @@ class App extends Component {
                     <div className="App">
                         <Switch>
                             <Route exact path={"/"}>
+                                <Home/>
+                            </Route>
+                            <Route exact path={"/contact-us"}>
                                 <ContactUs/>
                             </Route>
                             <Route exact path={"/about-us"}>
@@ -65,14 +74,29 @@ class App extends Component {
 
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/login" component={Login} />
+
+                            <Route exact path="/user-register" component={UserRegister} />
+                            <Route exact path="/user-login" component={UserLogin} />
                             <Switch>
                                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                                 <PrivateRoute exact path="/admins" component={Admins} />
                                 <PrivateRoute exact path="/customers" component={Customer} />
                                 <PrivateRoute exact path="/reservations" component={reservations} />
                                 <PrivateRoute exact path="/cars" component={Car} />
+                                <PrivateRoute exact path="/employees" component={Employees} />
                                 <PrivateRoute exact path="/payment-report" component={PaymentReport} />
+
+                                <PrivateRoute exact path="/userDashboard" component={UserDashboard} />
+
                             </Switch>
+
+
+
+
+
+
+
+
                             <Route exact path="*" component={NotFound} />
                         </Switch>
                     </div>
