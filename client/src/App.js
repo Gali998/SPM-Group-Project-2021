@@ -32,7 +32,7 @@ import Car from "./components/pages/Cars";
 import PaymentReport from "./components/pages/PaymentReport";
 import Home from "./Home";
 import {Collapse} from "@material-ui/core";
-import Employees from "./components/pages/Employees";
+
 import UserDashboard from "./components/pages/UserDashboard";
 
 if (localStorage.jwtToken) {
@@ -83,7 +83,7 @@ class App extends Component {
                                 <PrivateRoute exact path="/customers" component={Customer} />
                                 <PrivateRoute exact path="/reservations" component={reservations} />
                                 <PrivateRoute exact path="/cars" component={Car} />
-                                <PrivateRoute exact path="/employees" component={Employees} />
+                                
                                 <PrivateRoute exact path="/payment-report" component={PaymentReport} />
 
                                 <PrivateRoute exact path="/userDashboard" component={UserDashboard} />
