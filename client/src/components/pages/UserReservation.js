@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import axios from "axios";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import CustomerReservationAddModal from "../partials/CustomerReservationAddModal";
-import ReservationUpdateModal from "../partials/ReservationUpdateModal";
+import CustomerReservationUpdateModal from "../partials/CustomerReservationUpdateModal";
 import { toast, ToastContainer} from "react-toastify";
 
 class UserReservation extends Component {
@@ -192,7 +192,7 @@ class UserReservation extends Component {
                 <div className="d-flex" id="wrapper">
                     <Sidebar/>
                     <CustomerReservationAddModal/>
-                    <ReservationUpdateModal record={this.state.currentRecord}/>
+                    <CustomerReservationUpdateModal record={this.state.currentRecord}/>
                     <div id="page-content-wrapper">
                         <div className="container-fluid">
                             <button className="btn btn-link mt-3" id="menu-toggle"><FontAwesomeIcon icon={faList}/></button>
