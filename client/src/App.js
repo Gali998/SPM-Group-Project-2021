@@ -16,6 +16,7 @@ import ContactUs from "./ContactUs";
 import AboutUs from "./AboutUs";
 import SearchCars from "./components/pages/SearchCars";
 import CarLanding from "./CarLanding";
+import Home from './Home';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/bootstrap/dist/js/bootstrap';
@@ -49,6 +50,9 @@ class App extends Component {
                     <div className="App">
                         <Switch>
                             <Route exact path={"/"}>
+                                <Home />
+                            </Route>
+                            <Route exact path={"/contact-us"}>
                                 <ContactUs/>
                             </Route>
                             <Route exact path={"/about-us"}>
@@ -57,7 +61,6 @@ class App extends Component {
                             <Route exact path={"/search-cars"}>
                                 <SearchCars/>
                             </Route>
-
 
                             <Route exact path="/login-ui" component={LoginCardUI}/>
                             <Route exact path = "/register-ui" component={RegisterCardUI}/>
