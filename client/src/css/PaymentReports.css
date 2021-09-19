@@ -14,9 +14,10 @@ tr{
     padding: 15px;
 }
 
-#searchname{
-    margin-left: -168px;
-    margin-top: -48px;
+#search{
+    width:511px;
+    margin-left: -553px;
+    margin-top: 53px;
 }
 
 #measure1{
@@ -67,6 +68,6 @@ tr{
 }
 
 #print{
-    margin-left: 10px;
-    margin-top: -15px;
+    margin-left: 999px;
+    margin-top: -439px;
 }

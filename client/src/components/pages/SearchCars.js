@@ -77,7 +77,7 @@ export default class SearchCars extends React.Component{
                         </tr>
                         </thead>
                         <tbody>
-                            {/*{this.carList()}*/}
+
                             {(dataSearch.map(item =>
                                 <tr>
                                     <td>

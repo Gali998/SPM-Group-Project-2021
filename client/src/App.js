@@ -17,9 +17,10 @@ import AboutUs from "./AboutUs";
 import SearchCars from "./components/pages/SearchCars";
 import Feedback from "./components/partials/FeedbackAddModal";
 import FeedbackUpdate from "./components/partials/FeedbackUpdateModal";
-import PaymentReports from "./components/pages/PaymentReports";
+// import PaymentReports from "./components/pages/PaymentReports";
 import Payment from "./components/pages/Payment";
 import SubmitedFeedback from "./components/pages/SubmitedFeedback";
+import PrintPaymentReport from "./components/pages/PrintPaymentReport"
 
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -68,8 +69,11 @@ class App extends Component {
                             <Route exact path={"/feedbackupdate"}>
                                 <FeedbackUpdate/>
                             </Route>
-                            <Route exact path={"/payment-reports"}>
-                                <PaymentReports/>
+                            {/*<Route exact path={"/payment-reports"}>*/}
+                            {/*    <PaymentReports/>*/}
+                            {/*</Route>*/}
+                            <Route exact path={"/print-payment-reports"}>
+                                <PrintPaymentReport/>
                             </Route>
                             <Route exact path={"/payment"}>
                                 <Payment/>

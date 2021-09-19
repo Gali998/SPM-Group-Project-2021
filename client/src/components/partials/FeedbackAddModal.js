@@ -8,6 +8,8 @@ import { withRouter } from "react-router-dom";
 import { toast } from 'react-toastify';
 import $ from 'jquery';
 import axios from 'axios';
+const Validator = require("validator");
+const isEmpty = require("is-empty");
 
 class FeedbackAddModal extends React.Component{
 
@@ -20,7 +22,9 @@ class FeedbackAddModal extends React.Component{
             service:'',
             comment: '',
             errors:{},
-        };  
+        };
+        this.formValidation=this.formValidation.bind(this);
+
     }
 
     componentWillReceiveProps(nextProps) {
@@ -44,38 +48,65 @@ class FeedbackAddModal extends React.Component{
         this.setState({ [e.target.id]: e.target.value });
     };
 
+    formValidation = () => {
+        const {name, rating, usability, service, comment } = this.state;
+
+        const errors={};
+
+        if(Validator.isEmpty(name) || Validator.isEmpty(rating)|| Validator.isEmpty(usability) || Validator.isEmpty(service)||Validator.isEmpty(comment)){
+            errors.name = "Name field is required";
+            errors.rating = "Please select one";
+            errors.usability = "Please select one";
+            errors.service = "Please select one";
+            errors.comment = "Please leave a comment";
+
+            const isValid = false;
+            this.setState({errors: errors});
+            return isValid;
+        }
+        else{
+            const isValid = true;
+            return isValid;
+        }
+
+    }
+
     onUserAdd = e => {
         e.preventDefault();
-        
-        const newFeedback = {
+         const isValid = this.formValidation();
+         console.log(isValid);
+
+
+        if(isValid===true){
+            const newFeedback = {
                 name: this.state.name,
                 rating: this.state.rating,
                 usability: this.state.usability,
                 service: this.state.service,
                 comment: this.state.comment,
-        };
+            };
 
-        axios.post('http://localhost:1234/api/feedbacks/feedback-add',newFeedback)
-            .then(res=>{
-                const id = res.data.user;
-                
-                localStorage.setItem('id',id);
-                alert("Feedback Submitted");
-                this.props.history.push("/submittedfeedback")
-                
-            })
-            .catch(error=>{
-                console.log(error.message);
-                alert(error.message)
-            })
+            axios.post('http://localhost:1234/api/feedbacks/feedback-add',newFeedback)
+                .then(res=>{
+                    const id = res.data.user;
+
+                    localStorage.setItem('id',id);
+                    alert("Feedback Submitted");
+                    this.props.history.push("/submittedfeedback")
+
+                })
+                .catch(error=>{
+                    console.log(error.message);
+                    alert(error.message)
+                })
+        }
+
     };
 
     render(){
-        const { errors } = this.state;
+        const { name, rating, usability, service, comment,errors } = this.state;
         return(
             <div>
-                {/*<Header />*/}
-
                 <div style={{backgroundImage:`url(${backgroundImage})`, backgroungRepeat:"no-repeat", backgroundSize: "100% 100%",width: "100%", padding:"10px 10px 10px 10px", height:"956px"}} >
                     <div style={{backgroundColor:"gainsboro",width:"681px",height:"945px",marginLeft:"502px",padding: "28px 33px 10px 31px"}}>
                         <div>
@@ -90,8 +121,11 @@ class FeedbackAddModal extends React.Component{
                                            value={this.state.name}
                                            onChange={this.onChange}
                                            error={errors.name}
-                                           className={classnames("form-control", {invalid: errors.name})}/>
-                                    <span className="text-danger">{errors.name}</span>
+                                            className={classnames("form-control" ,{invalid: errors.name})}
+                                    />
+                                    <span className="text-danger">{this.state.errors.name}</span>
+
+
                                     <br/>
 
                                     <div>
@@ -104,7 +138,8 @@ class FeedbackAddModal extends React.Component{
                                                 value="one"
                                                 checked={"one"=== this.state.rating}
                                                 onChange={this.onChange}
-                                                className={classnames( {invalid: errors.rating})}/>
+                                                className={classnames( {invalid: errors.rating})}
+                                            />
                                             <label style={{marginLeft:"10px"}}>One</label>
                                             {/*<br/>*/}
 
@@ -165,8 +200,11 @@ class FeedbackAddModal extends React.Component{
                                                 value="poor"
                                                 checked={"poor"=== this.state.usability}
                                                 onChange={this.onChange}
-                                                className={classnames( {invalid: errors.usability})}/>
+                                                className={classnames( {invalid: errors.usability})}
+
+                                                />
                                             <label style={{marginLeft:"10px"}}>Poor</label>
+
 
                                             <input
                                                 style={{marginLeft:"113px"}}
@@ -230,7 +268,7 @@ class FeedbackAddModal extends React.Component{
                                     </div>
 
                                 </div>
-                                <span className="text-danger">{errors.usability}</span>
+                                <span className="text-danger">{errors.service}</span>
 
                                 <br/>
                                 <div>
@@ -243,12 +281,14 @@ class FeedbackAddModal extends React.Component{
                                         value={this.state.comment}
                                         onChange={this.onChange}
                                         error={errors.comment}
-                                        className={classnames("form-control", {invalid: errors.comment})}/>
+                                        className={classnames("form-control",{invalid: errors.comment})}/>
                                 </div>
                                 <span className="text-danger">{errors.comment}</span>
 
+
                                 <div>
                                     <button  style={{backgroundColor:"royalblue",marginLeft:"214px",marginTop:"57px",fontWeight:"bold", border:"none", color:"white",padding:"15px 32px",fontSize:"16px"}} type="submit" >Submit Feedback</button>
+
                                 </div>
 
                             </form>
@@ -257,8 +297,7 @@ class FeedbackAddModal extends React.Component{
                     </div>
                 </div>
 
-                {/*footer*/}
-                {/*<Footer/>*/}
+
             </div>
         )
     }
