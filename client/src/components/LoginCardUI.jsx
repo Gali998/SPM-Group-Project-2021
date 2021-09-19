@@ -22,7 +22,7 @@ function LoginCardUI() {
                         </div>
                     </Link>
 
-                    <Link id="link" to="/home">
+                    <Link id="link" to="/user-login">
                         <div id="des2">
                             <div className="editor-home">Customer Login</div>
                         </div>

@@ -12,6 +12,11 @@
     float:left;
 }
 
+#editor-background:hover{
+    opacity: 0.8;
+}
+
+
 #editorMain-background{
     width:1200px;
     height:700px;

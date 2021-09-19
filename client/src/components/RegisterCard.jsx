@@ -13,7 +13,7 @@ function RegisterCardUI() {
 
             {/*Header End */}
 
-            <div id="editor-background">
+            <div id="editor-background1">
                 <div id="editorMain-background">
 
                     <Link id="link" to="/register">
@@ -22,7 +22,7 @@ function RegisterCardUI() {
                         </div>
                     </Link>
 
-                    <Link id="link" to="#">
+                    <Link id="link" to="/user-register">
                         <div id="des2">
                             <div className="editor-home">Customer Register</div>
                         </div>

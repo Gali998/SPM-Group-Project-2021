@@ -6,6 +6,8 @@ import NotFound from "./components/layout/NotFound";
 import { Provider } from "react-redux";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Register from "./components/auth/Register";
+import UserRegister from "./components/auth/UserRegister";
+import UserLogin from "./components/auth/UserLogin";
 import store from "./store";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
@@ -15,12 +17,16 @@ import RegisterCardUI from "./components/RegisterCard";
 import ContactUs from "./ContactUs";
 import AboutUs from "./AboutUs";
 import SearchCars from "./components/pages/SearchCars";
+
 import Feedback from "./components/partials/FeedbackAddModal";
 import FeedbackUpdate from "./components/partials/FeedbackUpdateModal";
 // import PaymentReports from "./components/pages/PaymentReports";
 import Payment from "./components/pages/Payment";
 import SubmitedFeedback from "./components/pages/SubmitedFeedback";
 import PrintPaymentReport from "./components/pages/PrintPaymentReport"
+
+
+import CarLanding from "./CarLanding";
 
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
@@ -33,6 +39,11 @@ import Admins from "./components/pages/Admins";
 import Customer from "./components/pages/Customers";
 import reservations from "./components/pages/Reservations";
 import Car from "./components/pages/Cars";
+import PaymentReport from "./components/pages/PaymentReport";
+import Home from "./Home";
+import {Collapse} from "@material-ui/core";
+
+import UserDashboard from "./components/pages/UserDashboard";
 
 
 if (localStorage.jwtToken) {
@@ -55,6 +66,9 @@ class App extends Component {
                     <div className="App">
                         <Switch>
                             <Route exact path={"/"}>
+                                <Home/>
+                            </Route>
+                            <Route exact path={"/contact-us"}>
                                 <ContactUs/>
                             </Route>
                             <Route exact path={"/about-us"}>
@@ -84,16 +98,33 @@ class App extends Component {
 
                             <Route exact path="/login-ui" component={LoginCardUI}/>
                             <Route exact path = "/register-ui" component={RegisterCardUI}/>
+                            <Route exact path="/landing" component={CarLanding}/>
 
                             <Route exact path="/register" component={Register} />
                             <Route exact path="/login" component={Login} />
+
+                            <Route exact path="/user-register" component={UserRegister} />
+                            <Route exact path="/user-login" component={UserLogin} />
                             <Switch>
                                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                                 <PrivateRoute exact path="/admins" component={Admins} />
                                 <PrivateRoute exact path="/customers" component={Customer} />
                                 <PrivateRoute exact path="/reservations" component={reservations} />
                                 <PrivateRoute exact path="/cars" component={Car} />
+                                
+                                <PrivateRoute exact path="/payment-report" component={PaymentReport} />
+
+                                <PrivateRoute exact path="/userDashboard" component={UserDashboard} />
+
                             </Switch>
+
+
+
+
+
+
+
+
                             <Route exact path="*" component={NotFound} />
                         </Switch>
                     </div>
