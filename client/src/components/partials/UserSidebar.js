@@ -18,11 +18,11 @@ class UserSidebar extends Component {
         return (
             <div className="border-right h-100" id="sidebar-wrapper">
                 <div className="list-group list-group-flush">
-                    <Link to="/dashboard" className="list-group-item list-group-item-action">Dashboard</Link>
-                    <Link to="/admins" className="list-group-item list-group-item-action">User Profile</Link>
-                    <Link to="/customers" className="list-group-item list-group-item-action">Reservation</Link>
-                    <Link to="/reservations" className="list-group-item list-group-item-action">Feedback</Link>
-                    <Link to="/cars" className="list-group-item list-group-item-action">Payment</Link>
+                    <Link to="/userDashboard" className="list-group-item list-group-item-action">Dashboard</Link>
+                    <Link to="#" className="list-group-item list-group-item-action">User Profile</Link>
+                    <Link to="/userReservation" className="list-group-item list-group-item-action">Reservation</Link>
+                    <Link to="#" className="list-group-item list-group-item-action">Feedback</Link>
+                    <Link to="#" className="list-group-item list-group-item-action">Payment</Link>
                     <button className="list-group-item list-group-item-action" onClick={this.onLogoutClick}>Logout <FontAwesomeIcon icon={faSignOutAlt} /></button>
                 </div>
             </div>

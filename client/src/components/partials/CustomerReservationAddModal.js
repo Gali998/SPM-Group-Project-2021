@@ -2,7 +2,7 @@ import React from 'react'
 import classnames from "classnames";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { addUser } from "../../actions/reservationActions";
+import { addUser } from "../../actions/customerReservationAction";
 import { withRouter } from "react-router-dom";
 import { toast } from 'react-toastify';
 import $ from 'jquery';

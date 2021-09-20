@@ -34,6 +34,7 @@ import Home from "./Home";
 import {Collapse} from "@material-ui/core";
 
 import UserDashboard from "./components/pages/UserDashboard";
+import UserReservation from "./components/pages/UserReservation";
 
 if (localStorage.jwtToken) {
     const token = localStorage.jwtToken;
@@ -82,11 +83,12 @@ class App extends Component {
                                 <PrivateRoute exact path="/admins" component={Admins} />
                                 <PrivateRoute exact path="/customers" component={Customer} />
                                 <PrivateRoute exact path="/reservations" component={reservations} />
-                                <PrivateRoute exact path="/cars" component={Car} />
+                                <PrivateRoute exact path="/cars" component={Car} /> 
                                 
                                 <PrivateRoute exact path="/payment-report" component={PaymentReport} />
 
                                 <PrivateRoute exact path="/userDashboard" component={UserDashboard} />
+                                <PrivateRoute exact path="/userReservation" component={UserReservation} />
 
                             </Switch>
 

@@ -1,11 +1,15 @@
+import React, { Component, Fragment } from "react";
+import UserNavbar from "../partials/UserNavbar";
+import UserSidebar from "../partials/UserSidebar";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faList} from "@fortawesome/free-solid-svg-icons/faList";
 import ReactDatatable from '@ashvin27/react-datatable';
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import axios from "axios";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
-import CustomerReservationAddModal from "../partials/CustomerReservationAddModal";
-import CustomerReservationUpdateModal from "../partials/CustomerReservationUpdateModal";
+import ReservationAddModal from "../partials/CustomerReservationAddModal";
+import ReservationUpdateModal from "../partials/CustomerReservationUpdateModal";
 import { toast, ToastContainer} from "react-toastify";
 
 class UserReservation extends Component {
@@ -156,7 +160,7 @@ class UserReservation extends Component {
 
     getData() {
         axios
-            .post("/api/reservation/reservation-data")
+            .post("/api/cus-reservation/reservation-data")
             .then(res => {
                 this.setState({ records: res.data})
             })
@@ -169,7 +173,7 @@ class UserReservation extends Component {
 
     deleteRecord(record) {
         axios
-            .post("/api/reservation/user-delete", {_id: record._id})
+            .post("/api/cus-reservation/user-delete", {_id: record._id})
             .then(res => {
                 if (res.status === 200) {
                    toast(res.data.message, {
@@ -188,11 +192,11 @@ class UserReservation extends Component {
     render() {
         return (
             <div>
-                <Navbar/>
+                <UserNavbar/>
                 <div className="d-flex" id="wrapper">
-                    <Sidebar/>
-                    <CustomerReservationAddModal/>
-                    <CustomerReservationUpdateModal record={this.state.currentRecord}/>
+                    <UserSidebar/>
+                    <ReservationAddModal/>
+                    <ReservationUpdateModal record={this.state.currentRecord}/>
                     <div id="page-content-wrapper">
                         <div className="container-fluid">
                             <button className="btn btn-link mt-3" id="menu-toggle"><FontAwesomeIcon icon={faList}/></button>
