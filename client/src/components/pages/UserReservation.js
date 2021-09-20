@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
-import Navbar from "../partials/Navbar";
-import Sidebar from "../partials/Sidebar";
+import UserNavbar from "../partials/UserNavbar";
+import UserSidebar from "../partials/UserSidebar";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faList} from "@fortawesome/free-solid-svg-icons/faList";
 import ReactDatatable from '@ashvin27/react-datatable';
@@ -8,11 +8,11 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import axios from "axios";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
-import CustomerAddModal from "../partials/CustomerAddModal";
-import CustomerUpdateModal from "../partials/CustomerUpdateModal";
+import ReservationAddModal from "../partials/CustomerReservationAddModal";
+import ReservationUpdateModal from "../partials/CustomerReservationUpdateModal";
 import { toast, ToastContainer} from "react-toastify";
 
-class Customer extends Component {
+class UserReservation extends Component {
 
     constructor(props) {
         super(props);
@@ -26,16 +26,23 @@ class Customer extends Component {
                 sortable: true,
             },
             {
-                key: "firstName",
-                text: "First Name",
-                className: "firstName",
+                key: "customerName",
+                text: "Customer Name",
+                className: "customerName",
                 align: "left",
                 sortable: true,
             },
             {
-                key: "lastName",
-                text: "Last Name",
-                className: "lastName",
+                key: "address",
+                text: "Address",
+                className: "address",
+                align: "left",
+                sortable: true,
+            },
+            {
+                key: "phoneNumber",
+                text: "Phone Number",
+                className: "phoneNumber",
                 align: "left",
                 sortable: true,
             },
@@ -47,9 +54,23 @@ class Customer extends Component {
                 sortable: true
             },
             {
-                key: "username",
-                text: "Username",
-                className: "username",
+                key: "packageName",
+                text: "Package Name",
+                className: "packageName",
+                align: "left",
+                sortable: true
+            },
+            {
+                key: "location",
+                text: "Location",
+                className: "location",
+                align: "left",
+                sortable: true
+            },
+            {
+                key: "date",
+                text: "Reserved Date",
+                className: "date",
                 align: "left",
                 sortable: true
             },
@@ -85,8 +106,8 @@ class Customer extends Component {
         this.config = {
             page_size: 10,
             length_menu: [ 10, 20, 50 ],
-            filename: "Customers",
-            no_data_text: 'No Customer found!',
+            filename: "UserReservation",
+            no_data_text: 'No Reservation found!',
             button: {
                 excel: true,
                 print: true,
@@ -116,12 +137,13 @@ class Customer extends Component {
         this.state = {
             currentRecord: {
                 id: '',
-                firstName: '',
-                lastName: '',
+                customerName: '',
+                address: '',
+                phoneNumber: '',
                 email: '',
-                username: '',
-                password: '',
-                password2: '',
+                packageName: '',
+                location: '',
+                date: '',
             }
         };
 
@@ -138,7 +160,7 @@ class Customer extends Component {
 
     getData() {
         axios
-            .post("/api/customers/user-data")
+            .post("/api/cus-reservation/reservation-data")
             .then(res => {
                 this.setState({ records: res.data})
             })
@@ -151,7 +173,7 @@ class Customer extends Component {
 
     deleteRecord(record) {
         axios
-            .post("/api/customers/user-delete", {_id: record._id})
+            .post("/api/cus-reservation/user-delete", {_id: record._id})
             .then(res => {
                 if (res.status === 200) {
                    toast(res.data.message, {
@@ -170,16 +192,16 @@ class Customer extends Component {
     render() {
         return (
             <div>
-                <Navbar/>
+                <UserNavbar/>
                 <div className="d-flex" id="wrapper">
-                    <Sidebar/>
-                    <CustomerAddModal/>
-                    <CustomerUpdateModal record={this.state.currentRecord}/>
+                    <UserSidebar/>
+                    <ReservationAddModal/>
+                    <ReservationUpdateModal record={this.state.currentRecord}/>
                     <div id="page-content-wrapper">
                         <div className="container-fluid">
                             <button className="btn btn-link mt-3" id="menu-toggle"><FontAwesomeIcon icon={faList}/></button>
-                            <button className="btn btn-outline-primary float-right mt-3 mr-2" data-toggle="modal" data-target="#add-user-modal"><FontAwesomeIcon icon={faPlus}/> Add Customer</button>
-                            <h1 className="mt-2 text-primary">Payment Report List</h1>
+                            <button className="btn btn-outline-primary float-right mt-3 mr-2" data-toggle="modal" data-target="#add-user-modal"><FontAwesomeIcon icon={faPlus}/> Add Reservation</button>
+                            <h1 className="mt-2 text-primary">Reservation List</h1>
                             <ReactDatatable
                                 config={this.config}
                                 records={this.state.records}
@@ -196,7 +218,7 @@ class Customer extends Component {
 
 }
 
-Customer.propTypes = {
+UserReservation.propTypes = {
     auth: PropTypes.object.isRequired,
 };
 
@@ -207,4 +229,4 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps
-)(Customer);
+)(UserReservation);
