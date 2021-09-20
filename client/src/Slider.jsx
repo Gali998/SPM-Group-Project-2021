@@ -21,7 +21,7 @@ export default class Slider extends React.Component{
                             <div className="col">
                                 <div className="testimonial">
                                     <img src={p1} alt=""/>
-                                        <div className="name">VISHNI PERERA</div>
+                                        <div className="name">SUPUN GOMES</div>
                                         <div className="stars">
                                             <i className="fas fa-star"></i>
                                             <i className="fas fa-star"></i>
@@ -39,7 +39,7 @@ export default class Slider extends React.Component{
                             <div className="col">
                                 <div className="testimonial">
                                     <img src={p2} alt=""/>
-                                        <div className="name">SUPUN GOMES</div>
+                                        <div className="name">VISHNI PERERA</div>
                                         <div className="stars">
                                             <i className="fas fa-star"></i>
                                             <i className="fas fa-star"></i>
