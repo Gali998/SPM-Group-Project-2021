@@ -6,7 +6,10 @@ const passport = require('passport');
 const admins = require('./routes/api/admins');
 const customers = require('./routes/api/customers');
 const cars = require('./routes/api/cars');
+const users = require('./routes/api/users');
+
 const reservations = require('./routes/api/reservations');
+const cusreservation = require('./routes/api/customerReservations');
 const cors = require('cors');
 
 const uuid = require("uuid");
@@ -48,6 +51,9 @@ app.use('/api/admins', admins);
 app.use('/api/customers', customers);
 app.use('/api/cars', cars);
 app.use('/api/reservations', reservations);
+app.use('/api/users', users);
+app.use('/api/cus-reservation',cusreservation);
+
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 

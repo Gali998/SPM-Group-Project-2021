@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
-import Navbar from "../partials/Navbar";
-import Sidebar from "../partials/Sidebar";
+import UserNavbar from "../partials/UserNavbar";
+import UserSidebar from "../partials/UserSidebar";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faList} from "@fortawesome/free-solid-svg-icons/faList";
 import ReactDatatable from '@ashvin27/react-datatable';
@@ -8,11 +8,11 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import axios from "axios";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
-import ReservationAddModal from "../partials/ReservationAddModal";
-import ReservationUpdateModal from "../partials/ReservationAddModal";
+import ReservationAddModal from "../partials/CustomerReservationAddModal";
+import ReservationUpdateModal from "../partials/CustomerReservationUpdateModal";
 import { toast, ToastContainer} from "react-toastify";
 
-class Reservation extends Component {
+class UserReservation extends Component {
 
     constructor(props) {
         super(props);
@@ -106,7 +106,7 @@ class Reservation extends Component {
         this.config = {
             page_size: 10,
             length_menu: [ 10, 20, 50 ],
-            filename: "Reservations",
+            filename: "UserReservation",
             no_data_text: 'No Reservation found!',
             button: {
                 excel: true,
@@ -160,7 +160,7 @@ class Reservation extends Component {
 
     getData() {
         axios
-            .post("/api/reservations/reservation-data")
+            .post("/api/cus-reservation/reservation-data")
             .then(res => {
                 this.setState({ records: res.data})
             })
@@ -173,7 +173,7 @@ class Reservation extends Component {
 
     deleteRecord(record) {
         axios
-            .post("/api/reservations/user-delete", {_id: record._id})
+            .post("/api/cus-reservation/user-delete", {_id: record._id})
             .then(res => {
                 if (res.status === 200) {
                    toast(res.data.message, {
@@ -192,9 +192,9 @@ class Reservation extends Component {
     render() {
         return (
             <div>
-                <Navbar/>
+                <UserNavbar/>
                 <div className="d-flex" id="wrapper">
-                    <Sidebar/>
+                    <UserSidebar/>
                     <ReservationAddModal/>
                     <ReservationUpdateModal record={this.state.currentRecord}/>
                     <div id="page-content-wrapper">
@@ -218,7 +218,7 @@ class Reservation extends Component {
 
 }
 
-Reservation.propTypes = {
+UserReservation.propTypes = {
     auth: PropTypes.object.isRequired,
 };
 
@@ -229,4 +229,4 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps
-)(Reservation);
+)(UserReservation);
