@@ -18,6 +18,7 @@ import ContactUs from "./ContactUs";
 import AboutUs from "./AboutUs";
 import SearchCars from "./components/pages/SearchCars";
 import CarLanding from "./CarLanding";
+import Home from './Home';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/bootstrap/dist/js/bootstrap';
@@ -27,7 +28,7 @@ import '../node_modules/popper.js/dist/popper';
 
 import Admins from "./components/pages/Admins";
 import Customer from "./components/pages/Customers";
-import reservations from "./components/pages/Reservations";
+import Reservations from "./components/pages/Reservations";
 import Car from "./components/pages/Cars";
 import PaymentReport from "./components/pages/PaymentReport";
 import Home from "./Home";
@@ -56,7 +57,7 @@ class App extends Component {
                     <div className="App">
                         <Switch>
                             <Route exact path={"/"}>
-                                <Home/>
+                                <Home />
                             </Route>
                             <Route exact path={"/contact-us"}>
                                 <ContactUs/>
@@ -67,7 +68,6 @@ class App extends Component {
                             <Route exact path={"/search-cars"}>
                                 <SearchCars/>
                             </Route>
-
 
                             <Route exact path="/login-ui" component={LoginCardUI}/>
                             <Route exact path = "/register-ui" component={RegisterCardUI}/>
@@ -82,21 +82,16 @@ class App extends Component {
                                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                                 <PrivateRoute exact path="/admins" component={Admins} />
                                 <PrivateRoute exact path="/customers" component={Customer} />
-                                <PrivateRoute exact path="/reservations" component={reservations} />
-                                <PrivateRoute exact path="/cars" component={Car} /> 
-                                
+
+                                <PrivateRoute exact path="/reservations" component={Reservations} />
+                                <PrivateRoute exact path="/cars" component={Car} />                                
+
                                 <PrivateRoute exact path="/payment-report" component={PaymentReport} />
 
                                 <PrivateRoute exact path="/userDashboard" component={UserDashboard} />
                                 <PrivateRoute exact path="/userReservation" component={UserReservation} />
 
                             </Switch>
-
-
-
-
-
-
 
 
                             <Route exact path="*" component={NotFound} />
