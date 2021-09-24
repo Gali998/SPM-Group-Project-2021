@@ -31,6 +31,8 @@ import reservations from "./components/pages/Reservations";
 import Car from "./components/pages/Cars";
 import PaymentReport from "./components/pages/PaymentReport";
 import Employees from "./components/pages/Employees";
+import UserProfile from "./components/pages/UserProfile";
+
 import Home from "./Home";
 import {Collapse} from "@material-ui/core";
 
@@ -56,7 +58,7 @@ class App extends Component {
                     <div className="App">
                         <Switch>
                             <Route exact path={"/"}>
-                                <Home/>
+                                <UserProfile/>
                             </Route>
                             <Route exact path={"/contact-us"}>
                                 <ContactUs/>
