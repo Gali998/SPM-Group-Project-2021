@@ -1,8 +1,8 @@
 import React from 'react';
 import './css/slider.css';
-import p1 from './images/p1.png';
-import p2 from './images/p2.png';
-import p3 from './images/p3.png';
+// import p1 from './images/p1.png';
+// import p2 from './images/p2.png';
+// import p3 from './images/p3.png';
 
 
 

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/userAuthActions";
-import Navbar from "../partials/Navbar";
+import UserNavbar from "../partials/UserNavbar";
 import Sidebar from "../partials/UserSidebar";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faList} from "@fortawesome/free-solid-svg-icons/faList";
@@ -17,10 +17,10 @@ class UserDashboard extends Component {
     };
 
     render() {
-        //const { user } = this.props.auth;
+        
         return (
             <div>
-                <Navbar/>
+                <UserNavbar/>
                 <div className="d-flex" id="wrapper">
                     <Sidebar/>
                     <div id="page-content-wrapper">
@@ -29,39 +29,39 @@ class UserDashboard extends Component {
                             <h1 className="mt-2 text-primary">User Dashboard</h1>
                             <div className="row px-2">
                                 <div className="col-sm-3 p-sm-2">
-                                    <div className="card bg-primary text-white shadow-lg">
+                                    <div className="card bg-dark text-white shadow-lg">
                                         <div className="card-body">
                                             <h5 className="card-title"><b>User Profile</b></h5>
                                             <p className="card-text"><div style={{color:'white'}}>View the User profile</div></p>
-                                            <Link to="/admins" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to User Profile</Link>
+                                            <Link to="#" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to User Profile</Link>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="col-sm-3 p-sm-2">
-                                    <div className="card bg-primary text-white shadow-lg">
+                                    <div className="card bg-info text-white shadow-lg">
                                         <div className="card-body">
                                             <h5 className="card-title"><b>Reservations</b></h5>
                                             <p className="card-text"><div style={{color:'white'}}>View the Reservations</div></p>
-                                            <Link to="/reservations" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Reservations</Link>
+                                            <Link to="/userReservation" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Reservations</Link>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-sm-3 p-sm-2">
-                                    <div className="card bg-primary text-white shadow-lg">
+                                    <div className="card bg-dark text-white shadow-lg">
                                         <div className="card-body">
                                             <h5 className="card-title"><b>Feedback</b></h5>
                                             <p className="card-text"><div style={{color:'white'}}>View the Feedback</div></p>
-                                            <Link to="/cars" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Feedback</Link>
+                                            <Link to="#" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Feedback</Link>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-sm-3 p-sm-2">
-                                    <div className="card bg-primary text-white shadow-lg">
+                                    <div className="card bg-info text-white shadow-lg">
                                         <div className="card-body">
                                             <h5 className="card-title"><b>Payment</b></h5>
                                             <p className="card-text"><div style={{color:'white'}}>View the  Payment</div></p>
-                                            <Link to="/reservations" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Reservations</Link>
+                                            <Link to="#" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Reservations</Link>
                                         </div>
                                     </div>
                                 </div>

@@ -9,7 +9,7 @@ import {connect} from "react-redux";
 import axios from "axios";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import ReservationAddModal from "../partials/ReservationAddModal";
-import ReservationUpdateModal from "../partials/ReservationUpdateModal";
+import ReservationUpdateModal from "../partials/ReservationAddModal";
 import { toast, ToastContainer} from "react-toastify";
 
 class Reservation extends Component {
