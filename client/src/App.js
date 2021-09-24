@@ -31,6 +31,8 @@ import reservations from "./components/pages/Reservations";
 import Car from "./components/pages/Cars";
 import PaymentReport from "./components/pages/PaymentReport";
 import Employees from "./components/pages/Employees";
+import UserProfile from "./components/pages/UserProfile";
+
 import Home from "./Home";
 import {Collapse} from "@material-ui/core";
 
@@ -87,6 +89,7 @@ class App extends Component {
                                 <PrivateRoute exact path="/payment-report" component={PaymentReport} />
                                 <PrivateRoute exact path="/employees" component={Employees} />
                                 <PrivateRoute exact path="/userDashboard" component={UserDashboard} />
+                                <PrivateRoute exact path="/userprofile" component={UserProfile} />
 
                             </Switch>
 
