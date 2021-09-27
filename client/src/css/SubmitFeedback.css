@@ -1,7 +1,7 @@
-h1{
+.heading{
+    margin-top: 36px;
     color: dodgerblue;
-    font-weight: bold;
-    text-align: center;
+    margin-left: 200px;
 }
 
 th{

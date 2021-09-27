@@ -1,10 +1,13 @@
-h1{
+
+
+#heading{
+    margin-top: 36px;
     color: dodgerblue;
-    font-weight: bold;
     text-align: center;
 }
 
 th{
+    color: dodgerblue;
     text-align: center;
     padding: 15px;
 }
@@ -27,9 +30,9 @@ tr{
 }
 
 #reporttable{
-    height: 50%;
-    width: 75%;
-    margin-left: 219px;
+    height: auto;
+    width: 90%;
+    margin-left: 100px;
 }
 
 #measuredate{
@@ -67,7 +70,3 @@ tr{
     margin-top: -15px;
 }
 
-#print{
-    margin-left: 999px;
-    margin-top: -439px;
-}
