@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Dashboard from "./components/pages/Dashboard";
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import Login from "./components/auth/Login";
 import NotFound from "./components/layout/NotFound";
 import { Provider } from "react-redux";
@@ -17,13 +17,22 @@ import RegisterCardUI from "./components/RegisterCard";
 import ContactUs from "./ContactUs";
 import AboutUs from "./AboutUs";
 import SearchCars from "./components/pages/SearchCars";
+
+import Feedback from "./components/partials/FeedbackAddModal";
+import FeedbackUpdate from "./components/partials/FeedbackUpdateModal";
+// import PaymentReports from "./components/pages/PaymentReports";
+import Payment from "./components/pages/Payment";
+import SubmitedFeedback from "./components/pages/SubmitedFeedback";
+import PrintPaymentReport from "./components/pages/PrintPaymentReport";
+
 import CarLanding from "./CarLanding";
-import './App.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
-import '../node_modules/bootstrap/dist/js/bootstrap';
-import '../node_modules/font-awesome/css/font-awesome.css';
-import '../node_modules/jquery/dist/jquery.min';
-import '../node_modules/popper.js/dist/popper';
+
+import "./App.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import "../node_modules/bootstrap/dist/js/bootstrap";
+import "../node_modules/font-awesome/css/font-awesome.css";
+import "../node_modules/jquery/dist/jquery.min";
+import "../node_modules/popper.js/dist/popper";
 
 import Admins from "./components/pages/Admins";
 import Customer from "./components/pages/Customers";
@@ -34,23 +43,22 @@ import Employees from "./components/pages/Employees";
 import UserProfile from "./components/pages/UserProfile";
 
 import Home from "./Home";
-import {Collapse} from "@material-ui/core";
+import { Collapse } from "@material-ui/core";
 
 import UserDashboard from "./components/pages/UserDashboard";
 
 if (localStorage.jwtToken) {
-    const token = localStorage.jwtToken;
-    setAuthToken(token);
-    const decoded = jwt_decode(token);
-    store.dispatch(setCurrentUser(decoded));
-    const currentTime = Date.now() / 1000;
-    if (decoded.exp < currentTime) {
-        store.dispatch(logoutUser());
-        window.location.href = "./login";
-    }
+  const token = localStorage.jwtToken;
+  setAuthToken(token);
+  const decoded = jwt_decode(token);
+  store.dispatch(setCurrentUser(decoded));
+  const currentTime = Date.now() / 1000;
+  if (decoded.exp < currentTime) {
+    store.dispatch(logoutUser());
+    window.location.href = "./login";
+  }
 }
 
-class App extends Component {
     render () {
         return (
             <Provider store={store}>
@@ -64,12 +72,29 @@ class App extends Component {
                                 <ContactUs/>
                             </Route>
                             <Route exact path={"/about-us"}>
-                                <AboutUs/>
+                              <AboutUs />
                             </Route>
                             <Route exact path={"/search-cars"}>
-                                <SearchCars/>
+                              <SearchCars />
                             </Route>
-
+                            <Route exact path={"/feedback"}>
+                              <Feedback />
+                            </Route>
+                            <Route exact path={"/feedbackupdate"}>
+                              <FeedbackUpdate />
+                            </Route>
+                            {/*<Route exact path={"/payment-reports"}>*/}
+                            {/*    <PaymentReports/>*/}
+                            {/*</Route>*/}
+                            <Route exact path={"/print-payment-reports"}>
+                              <PrintPaymentReport />
+                            </Route>
+                            <Route exact path={"/payment"}>
+                              <Payment />
+                            </Route>
+                            <Route exact path={"/submittedfeedback"}>
+                              <SubmitedFeedback />
+                            </Route>
 
                             <Route exact path="/login-ui" component={LoginCardUI}/>
                             <Route exact path = "/register-ui" component={RegisterCardUI}/>
@@ -93,13 +118,6 @@ class App extends Component {
 
                             </Switch>
 
-
-
-
-
-
-
-
                             <Route exact path="*" component={NotFound} />
                         </Switch>
                     </div>
@@ -107,6 +125,7 @@ class App extends Component {
             </Provider>
         );
     }
+
 }
 
 export default App;

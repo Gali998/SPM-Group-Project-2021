@@ -4,12 +4,16 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/userAuthActions";
 import UserNavbar from "../partials/UserNavbar";
 import Sidebar from "../partials/UserSidebar";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faList} from "@fortawesome/free-solid-svg-icons/faList";
-import {Link} from "react-router-dom";
-import {faUserAlt} from "@fortawesome/free-solid-svg-icons/faUserAlt";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faList } from "@fortawesome/free-solid-svg-icons/faList";
+import { Link } from "react-router-dom";
+import { faUserAlt } from "@fortawesome/free-solid-svg-icons/faUserAlt";
 
 class UserDashboard extends Component {
+  onLogoutClick = (e) => {
+    e.preventDefault();
+    this.props.logoutUser();
+  };
 
     onLogoutClick = e => {
         e.preventDefault();
@@ -52,7 +56,7 @@ class UserDashboard extends Component {
                                         <div className="card-body">
                                             <h5 className="card-title"><b>Feedback</b></h5>
                                             <p className="card-text"><div style={{color:'white'}}>View the Feedback</div></p>
-                                            <Link to="#" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Feedback</Link>
+                                            <Link to="/feedback" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Feedback</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -61,29 +65,34 @@ class UserDashboard extends Component {
                                         <div className="card-body">
                                             <h5 className="card-title"><b>Payment</b></h5>
                                             <p className="card-text"><div style={{color:'white'}}>View the  Payment</div></p>
-                                            <Link to="#" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Reservations</Link>
+                                            <Link to="/payment" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Payment</Link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+                      </p>
+                      
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        );
-    }
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 UserDashboard.propTypes = {
-    logoutUser: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
-    auth: state.auth
+const mapStateToProps = (state) => ({
+  auth: state.auth,
 });
 
-export default connect(
-    mapStateToProps,
-    { logoutUser }
-)(UserDashboard);
+export default connect(mapStateToProps, { logoutUser })(UserDashboard);

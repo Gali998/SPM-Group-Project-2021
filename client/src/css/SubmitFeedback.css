@@ -1,0 +1,54 @@
+.heading{
+    margin-top: 36px;
+    color: dodgerblue;
+    margin-left: 200px;
+}
+
+th{
+    text-align: center;
+    padding: 15px;
+}
+
+tr{
+    text-align: center;
+    padding: 15px;
+}
+
+
+#feedbacktable{
+    height: 45%;
+    width: 75%;
+    margin-left: 219px;
+    margin-top: 93px;
+}
+
+#btnedit{
+    background-color: dodgerblue;
+    width:109px;
+    height: 50px;
+    text-decoration-color: white;
+    font-weight: bold;
+    border: none;
+    color: white;
+}
+
+#btndelete{
+    margin-left: 10px;
+    background-color: red;
+    width:110px;
+    height: 50px;
+    font-weight: bold;
+    border: none;
+    color: white;
+}
+
+#btn1{
+    margin-left: 127px;
+    margin-top: -10px;
+}
+
+#btn2{
+    margin-left: 328px;
+    margin-top: -57px;
+    margin-right:-150px ;
+}

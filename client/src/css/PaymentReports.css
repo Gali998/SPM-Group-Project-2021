@@ -1,0 +1,72 @@
+
+
+#heading{
+    margin-top: 36px;
+    color: dodgerblue;
+    text-align: center;
+}
+
+th{
+    color: dodgerblue;
+    text-align: center;
+    padding: 15px;
+}
+
+tr{
+    text-align: center;
+    padding: 15px;
+}
+
+#search{
+    width:511px;
+    margin-left: -553px;
+    margin-top: 53px;
+}
+
+#measure1{
+    margin-left: 1057px;
+    margin-top: -45px;
+    padding: 10px 10px 20px 10px;
+}
+
+#reporttable{
+    height: auto;
+    width: 90%;
+    margin-left: 100px;
+}
+
+#measuredate{
+    margin-left: 386px;
+    margin-top:32px;
+}
+
+#btnprint{
+    background-color: #0966bc;
+    border: none;
+    color: white;
+    padding: 3px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin-left: 209px;
+    margin-bottom: 22px;
+    font-weight: bold;
+}
+
+#labelmeasure1{
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+}
+
+#labelmeasure2{
+    padding: 10px 10px 10px 10px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#label{
+    margin-left: -332px;
+    margin-top: -15px;
+}
+

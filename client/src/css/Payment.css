@@ -1,0 +1,55 @@
+.inlineimage {
+    max-width: 470px;
+    margin-right: 8px;
+    margin-left: 66px
+}
+
+.images {
+    display: inline-block;
+    max-width: 98%;
+    height: auto;
+    width: 22%;
+    margin: 1%;
+    left: 20px;
+    text-align: center
+}
+
+
+
+.formback{
+    margin-left: 10px;
+}
+
+.btnpay{
+    background-color: #f32020;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 10px;
+    width: 214px;
+    height: 58px;
+    margin-left: 195px;
+    margi-top: 103px;
+    border: none;
+}
+
+.label1{
+    margin-bottom: 1rem;
+    margin-left: 31px;
+}
+
+.label2{
+    margin-bottom: 1rem;
+    margin-left: 31px;
+}
+
+.label3{
+    margin-bottom: 1rem;
+    margin-left: 33px;
+}
+
+.label4{
+    margin-bottom: 1rem;
+    margin-left: 31px;
+}
+

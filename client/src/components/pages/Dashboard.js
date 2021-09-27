@@ -4,12 +4,16 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Navbar from "../partials/Navbar";
 import Sidebar from "../partials/Sidebar";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faList} from "@fortawesome/free-solid-svg-icons/faList";
-import {Link} from "react-router-dom";
-import {faUserAlt} from "@fortawesome/free-solid-svg-icons/faUserAlt";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faList } from "@fortawesome/free-solid-svg-icons/faList";
+import { Link } from "react-router-dom";
+import { faUserAlt } from "@fortawesome/free-solid-svg-icons/faUserAlt";
 
 class Dashboard extends Component {
+  onLogoutClick = (e) => {
+    e.preventDefault();
+    this.props.logoutUser();
+  };
 
     onLogoutClick = e => {
         e.preventDefault();
@@ -69,7 +73,7 @@ class Dashboard extends Component {
                                         <div className="card-body">
                                             <h5 className="card-title"><b>Payment Report</b></h5>
                                             <p className="card-text"><div style={{color:'white'}}>Check the Payment Report</div></p>
-                                            <Link to="/payment-report" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Payment Report</Link>
+                                            <Link to="/print-payment-report" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to Payment Report</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -83,24 +87,38 @@ class Dashboard extends Component {
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+                      </p>
+                      <Link
+                        to="/print-payment-reports"
+                        className="btn btn-light"
+                      >
+                        <FontAwesomeIcon
+                          className="text-primary"
+                          icon={faUserAlt}
+                        />{" "}
+                        Go to Payment Report
+                      </Link>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        );
-    }
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 Dashboard.propTypes = {
-    logoutUser: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
-    auth: state.auth
+const mapStateToProps = (state) => ({
+  auth: state.auth,
 });
 
-export default connect(
-    mapStateToProps,
-    { logoutUser }
-)(Dashboard);
+export default connect(mapStateToProps, { logoutUser })(Dashboard);
