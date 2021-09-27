@@ -44,8 +44,8 @@ export default class Header extends React.Component{
                         <div className="col-12" style={{float: 'left'}}>
                         <nav className="site-navigation text-right ml-auto " role="navigation">
                             
-                            <div className="site-logo" style={{float: 'left'}}>
-                            <Link to="#" className="text-black"><span className="text-primary">Car Zone</span></Link>
+                            <div style={{float: 'left', fontSize: '38px', fontWeight: 'bold',}}>
+                                <Link to="#" className="text-black"><span className="text-primary">Car Zone</span></Link>
                             </div>
 
                             <ul className="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">

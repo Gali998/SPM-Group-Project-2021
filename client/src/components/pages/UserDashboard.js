@@ -70,18 +70,10 @@ class UserDashboard extends Component {
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                      </p>
-                      
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
     );
   }
 }
