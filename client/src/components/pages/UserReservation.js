@@ -1,12 +1,18 @@
-import { faList } from "@fortawesome/free-solid-svg-icons/faList";
-import ReactDatatable from "@ashvin27/react-datatable";
+import React, { Component, Fragment } from "react";
+import UserNavbar from "../partials/UserNavbar";
+import UserSidebar from "../partials/UserSidebar";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faList} from "@fortawesome/free-solid-svg-icons/faList";
+import ReactDatatable from '@ashvin27/react-datatable';
+
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import axios from "axios";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import CustomerReservationAddModal from "../partials/CustomerReservationAddModal";
-import CustomerReservationUpdateModal from "../partials/CustomerReservationUpdateModal";
-import { toast, ToastContainer } from "react-toastify";
+
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
+import ReservationAddModal from "../partials/CustomerReservationAddModal";
+import ReservationUpdateModal from "../partials/CustomerReservationUpdateModal";
+import { toast, ToastContainer} from "react-toastify";
 
 class UserReservation extends Component {
   constructor(props) {
@@ -131,18 +137,67 @@ class UserReservation extends Component {
       records: [],
     };
 
-    this.state = {
-      currentRecord: {
-        id: "",
-        customerName: "",
-        address: "",
-        phoneNumber: "",
-        email: "",
-        packageName: "",
-        location: "",
-        date: "",
-      },
-    };
+    componentWillReceiveProps(nextProps) {
+        this.getData()
+    }
+
+    getData() {
+        axios
+            .post("/api/cus-reservation/reservation-data")
+            .then(res => {
+                this.setState({ records: res.data})
+            })
+            .catch()
+    }
+
+    editRecord(record) {
+        this.setState({ currentRecord: record});
+    }
+
+    deleteRecord(record) {
+        axios
+            .post("/api/cus-reservation/user-delete", {_id: record._id})
+            .then(res => {
+                if (res.status === 200) {
+                   toast(res.data.message, {
+                       position: toast.POSITION.TOP_CENTER,
+                   })
+                }
+            })
+            .catch();
+        this.getData();
+    }
+
+    pageChange(pageData) {
+        console.log("OnPageChange", pageData);
+    }
+
+    render() {
+        return (
+            <div>
+                <UserNavbar/>
+                <div className="d-flex" id="wrapper">
+                    <UserSidebar/>
+                    <ReservationAddModal/>
+                    <ReservationUpdateModal record={this.state.currentRecord}/>
+                    <div id="page-content-wrapper">
+                        <div className="container-fluid">
+                            <button className="btn btn-link mt-3" id="menu-toggle"><FontAwesomeIcon icon={faList}/></button>
+                            <button className="btn btn-outline-primary float-right mt-3 mr-2" data-toggle="modal" data-target="#add-user-modal"><FontAwesomeIcon icon={faPlus}/> Add Reservation</button>
+                            <h1 className="mt-2 text-primary">Reservation List</h1>
+                            <ReactDatatable
+                                config={this.config}
+                                records={this.state.records}
+                                columns={this.columns}
+                                onPageChange={this.pageChange.bind(this)}
+                            />
+                        </div>
+                    </div>
+                    <ToastContainer/>
+                </div>
+            </div>
+        );
+    }
 
     this.getData = this.getData.bind(this);
   }

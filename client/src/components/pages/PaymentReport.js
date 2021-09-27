@@ -114,17 +114,67 @@ class Customer extends Component {
       records: [],
     };
 
-    this.state = {
-      currentRecord: {
-        id: "",
-        firstName: "",
-        lastName: "",
-        email: "",
-        username: "",
-        password: "",
-        password2: "",
-      },
-    };
+    componentWillReceiveProps(nextProps) {
+        this.getData()
+    }
+
+    getData() {
+        axios
+            .post("/api/customers/user-data")
+            .then(res => {
+                this.setState({ records: res.data})
+            })
+            .catch()
+    }
+
+    editRecord(record) {
+        this.setState({ currentRecord: record});
+    }
+
+    deleteRecord(record) {
+        axios
+            .post("/api/customers/user-delete", {_id: record._id})
+            .then(res => {
+                if (res.status === 200) {
+                   toast(res.data.message, {
+                       position: toast.POSITION.TOP_CENTER,
+                   })
+                }
+            })
+            .catch();
+        this.getData();
+    }
+
+    pageChange(pageData) {
+        console.log("OnPageChange", pageData);
+    }
+
+    render() {
+        return (
+            <div>
+                <Navbar/>
+                <div className="d-flex" id="wrapper">
+                    <Sidebar/>
+                    <CustomerAddModal/>
+                    <CustomerUpdateModal record={this.state.currentRecord}/>
+                    <div id="page-content-wrapper">
+                        <div className="container-fluid">
+                            <button className="btn btn-link mt-3" id="menu-toggle"><FontAwesomeIcon icon={faList}/></button>
+                            <button className="btn btn-outline-primary float-right mt-3 mr-2" data-toggle="modal" data-target="#add-user-modal"><FontAwesomeIcon icon={faPlus}/> Add Customer</button>
+                            <h1 className="mt-2 text-primary">Payment Report List</h1>
+                            <ReactDatatable
+                                config={this.config}
+                                records={this.state.records}
+                                columns={this.columns}
+                                onPageChange={this.pageChange.bind(this)}
+                            />
+                        </div>
+                    </div>
+                    <ToastContainer/>
+                </div>
+            </div>
+        );
+    }
 
     this.getData = this.getData.bind(this);
   }

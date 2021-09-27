@@ -11,49 +11,28 @@ class UserSidebar extends Component {
     e.preventDefault();
     this.props.logoutUser();
   };
+  
+    onLogoutClick = e => {
+        e.preventDefault();
+        this.props.logoutUser();
+    };
 
-  render() {
-    //const { user } = this.props.auth;
-    return (
-      <div className="border-right h-100" id="sidebar-wrapper">
-        <div className="list-group list-group-flush">
-          <Link
-            to="/dashboard"
-            className="list-group-item list-group-item-action"
-          >
-            Dashboard
-          </Link>
-          <Link to="/admins" className="list-group-item list-group-item-action">
-            User Profile
-          </Link>
-          <Link
-            to="/customers"
-            className="list-group-item list-group-item-action"
-          >
-            Reservation
-          </Link>
-          <Link
-            to="/feedback"
-            className="list-group-item list-group-item-action"
-          >
-            Feedback
-          </Link>
-          <Link
-            to="/payment"
-            className="list-group-item list-group-item-action"
-          >
-            Payment
-          </Link>
-          <button
-            className="list-group-item list-group-item-action"
-            onClick={this.onLogoutClick}
-          >
-            Logout <FontAwesomeIcon icon={faSignOutAlt} />
-          </button>
-        </div>
-      </div>
-    );
-  }
+    render() {
+        //const { user } = this.props.auth;
+        return (
+            <div className="border-right h-100" id="sidebar-wrapper">
+                <div className="list-group list-group-flush">
+                    <Link to="/userDashboard" className="list-group-item list-group-item-action">Dashboard</Link>
+                    <Link to="/userprofile" className="list-group-item list-group-item-action">User Profile</Link>
+                    <Link to="/userReservation" className="list-group-item list-group-item-action">Reservation</Link>
+                    <Link to="/feedback" className="list-group-item list-group-item-action">Feedback</Link>
+                    <Link to="/payment" className="list-group-item list-group-item-action">Payment</Link>
+                    <button className="list-group-item list-group-item-action" onClick={this.onLogoutClick}>Logout <FontAwesomeIcon icon={faSignOutAlt} /></button>
+                </div>
+            </div>
+        );
+    }
+
 }
 
 UserSidebar.propTypes = {

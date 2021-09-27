@@ -39,6 +39,9 @@ import Customer from "./components/pages/Customers";
 import reservations from "./components/pages/Reservations";
 import Car from "./components/pages/Cars";
 import PaymentReport from "./components/pages/PaymentReport";
+import Employees from "./components/pages/Employees";
+import UserProfile from "./components/pages/UserProfile";
+
 import Home from "./Home";
 import { Collapse } from "@material-ui/core";
 
@@ -56,84 +59,73 @@ if (localStorage.jwtToken) {
   }
 }
 
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Router>
-          <div className="App">
-            <Switch>
-              <Route exact path={"/"}>
-                <Home />
-              </Route>
-              <Route exact path={"/contact-us"}>
-                <ContactUs />
-              </Route>
-              <Route exact path={"/about-us"}>
-                <AboutUs />
-              </Route>
-              <Route exact path={"/search-cars"}>
-                <SearchCars />
-              </Route>
-              <Route exact path={"/feedback"}>
-                <Feedback />
-              </Route>
-              <Route exact path={"/feedbackupdate"}>
-                <FeedbackUpdate />
-              </Route>
-              {/*<Route exact path={"/payment-reports"}>*/}
-              {/*    <PaymentReports/>*/}
-              {/*</Route>*/}
-              <Route exact path={"/print-payment-reports"}>
-                <PrintPaymentReport />
-              </Route>
-              <Route exact path={"/payment"}>
-                <Payment />
-              </Route>
-              <Route exact path={"/submittedfeedback"}>
-                <SubmitedFeedback />
-              </Route>
+    render () {
+        return (
+            <Provider store={store}>
+                <Router>
+                    <div className="App">
+                        <Switch>
+                            <Route exact path={"/"}>
+                                <Home/>
+                            </Route>
+                            <Route exact path={"/contact-us"}>
+                                <ContactUs/>
+                            </Route>
+                            <Route exact path={"/about-us"}>
+                              <AboutUs />
+                            </Route>
+                            <Route exact path={"/search-cars"}>
+                              <SearchCars />
+                            </Route>
+                            <Route exact path={"/feedback"}>
+                              <Feedback />
+                            </Route>
+                            <Route exact path={"/feedbackupdate"}>
+                              <FeedbackUpdate />
+                            </Route>
+                            {/*<Route exact path={"/payment-reports"}>*/}
+                            {/*    <PaymentReports/>*/}
+                            {/*</Route>*/}
+                            <Route exact path={"/print-payment-reports"}>
+                              <PrintPaymentReport />
+                            </Route>
+                            <Route exact path={"/payment"}>
+                              <Payment />
+                            </Route>
+                            <Route exact path={"/submittedfeedback"}>
+                              <SubmitedFeedback />
+                            </Route>
 
-              <Route exact path="/login-ui" component={LoginCardUI} />
-              <Route exact path="/register-ui" component={RegisterCardUI} />
-              <Route exact path="/landing" component={CarLanding} />
+                            <Route exact path="/login-ui" component={LoginCardUI}/>
+                            <Route exact path = "/register-ui" component={RegisterCardUI}/>
+                            <Route exact path="/landing" component={CarLanding}/>
 
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
+                            <Route exact path="/register" component={Register} />
+                            <Route exact path="/login" component={Login} />
 
-              <Route exact path="/user-register" component={UserRegister} />
-              <Route exact path="/user-login" component={UserLogin} />
-              <Switch>
-                <PrivateRoute exact path="/dashboard" component={Dashboard} />
-                <PrivateRoute exact path="/admins" component={Admins} />
-                <PrivateRoute exact path="/customers" component={Customer} />
-                <PrivateRoute
-                  exact
-                  path="/reservations"
-                  component={reservations}
-                />
-                <PrivateRoute exact path="/cars" component={Car} />
+                            <Route exact path="/user-register" component={UserRegister} />
+                            <Route exact path="/user-login" component={UserLogin} />
+                            <Switch>
+                                <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                                <PrivateRoute exact path="/admins" component={Admins} />
+                                <PrivateRoute exact path="/customers" component={Customer} />
+                                <PrivateRoute exact path="/reservations" component={reservations} />
+                                <PrivateRoute exact path="/cars" component={Car} />
+                                <PrivateRoute exact path="/payment-report" component={PaymentReport} />
+                                <PrivateRoute exact path="/employees" component={Employees} />
+                                <PrivateRoute exact path="/userDashboard" component={UserDashboard} />
+                                <PrivateRoute exact path="/userprofile" component={UserProfile} />
 
-                <PrivateRoute
-                  exact
-                  path="/payment-report"
-                  component={PaymentReport}
-                />
+                            </Switch>
 
-                <PrivateRoute
-                  exact
-                  path="/userDashboard"
-                  component={UserDashboard}
-                />
-              </Switch>
+                            <Route exact path="*" component={NotFound} />
+                        </Switch>
+                    </div>
+                </Router>
+            </Provider>
+        );
+    }
 
-              <Route exact path="*" component={NotFound} />
-            </Switch>
-          </div>
-        </Router>
-      </Provider>
-    );
-  }
 }
 
 export default App;
