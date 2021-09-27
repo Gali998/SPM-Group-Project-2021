@@ -33,7 +33,7 @@ class UserDashboard extends Component {
                                         <div className="card-body">
                                             <h5 className="card-title"><b>User Profile</b></h5>
                                             <p className="card-text"><div style={{color:'white'}}>View the User profile</div></p>
-                                            <Link to="#" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to User Profile</Link>
+                                            <Link to="/userprofile" className="btn btn-light"><FontAwesomeIcon className="text-primary" icon={faUserAlt}/> Go to User Profile</Link>
                                         </div>
                                     </div>
                                 </div>
