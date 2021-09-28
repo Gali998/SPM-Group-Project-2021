@@ -33,7 +33,7 @@ import Admins from "./components/pages/Admins";
 import Customer from "./components/pages/Customers";
 import reservations from "./components/pages/Reservations";
 import Car from "./components/pages/Cars";
-import PaymentReport from "./components/pages/PaymentReport";
+import PaymentReport from "./components/pages/PaymentReports";
 import Employees from "./components/pages/Employees";
 import UserProfile from "./components/pages/UserProfile";
 import UserReservation from "./components/pages/UserReservation";
