@@ -17,23 +17,18 @@ import RegisterCardUI from "./components/RegisterCard";
 import ContactUs from "./ContactUs";
 import AboutUs from "./AboutUs";
 import SearchCars from "./components/pages/SearchCars";
-
 import Feedback from "./components/partials/FeedbackAddModal";
 import FeedbackUpdate from "./components/partials/FeedbackUpdateModal";
-// import PaymentReports from "./components/pages/PaymentReports";
 import Payment from "./components/pages/Payment";
 import SubmitedFeedback from "./components/pages/SubmitedFeedback";
 import PrintPaymentReport from "./components/pages/PrintPaymentReport";
-
 import CarLanding from "./CarLanding";
-
 import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../node_modules/bootstrap/dist/js/bootstrap";
 import "../node_modules/font-awesome/css/font-awesome.css";
 import "../node_modules/jquery/dist/jquery.min";
 import "../node_modules/popper.js/dist/popper";
-
 import Admins from "./components/pages/Admins";
 import Customer from "./components/pages/Customers";
 import reservations from "./components/pages/Reservations";
@@ -41,10 +36,9 @@ import Car from "./components/pages/Cars";
 import PaymentReport from "./components/pages/PaymentReport";
 import Employees from "./components/pages/Employees";
 import UserProfile from "./components/pages/UserProfile";
-
+import UserReservation from "./components/pages/UserReservation";
 import Home from "./Home";
 import { Collapse } from "@material-ui/core";
-
 import UserDashboard from "./components/pages/UserDashboard";
 
 if (localStorage.jwtToken) {
@@ -84,9 +78,6 @@ class App extends Component {
                             <Route exact path={"/feedbackupdate"}>
                               <FeedbackUpdate />
                             </Route>
-                            {/*<Route exact path={"/payment-reports"}>*/}
-                            {/*    <PaymentReports/>*/}
-                            {/*</Route>*/}
                             <Route exact path={"/print-payment-reports"}>
                               <PrintPaymentReport />
                             </Route>
@@ -116,6 +107,7 @@ class App extends Component {
                                 <PrivateRoute exact path="/employees" component={Employees} />
                                 <PrivateRoute exact path="/userDashboard" component={UserDashboard} />
                                 <PrivateRoute exact path="/userprofile" component={UserProfile} />
+                                <PrivateRoute exact path="/userReservation" component={UserReservation} />
 
                             </Switch>
 
