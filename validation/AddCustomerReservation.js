@@ -13,7 +13,7 @@ module.exports = function validateRegisterInput(data) {
         errors.customerName = "Customer Name field is required";
     }
     if (Validator.isEmpty(data.address)) {
-        errors.address = "Last Name field is required";
+        errors.address = "Address field is required";
     }
     if (Validator.isEmpty(data.phoneNumber)) {
         errors.phoneNumber = "Phone number field is required";
@@ -28,9 +28,6 @@ module.exports = function validateRegisterInput(data) {
     }
     if (Validator.isEmpty(data.location)) {
         errors.location = "Location field is required";
-    }
-    if (Validator.isEmpty(data.packageName)) {
-        errors.packageName = "Package Name field is required";
     }
     if (Validator.isEmpty(data.date)) {
         errors.date = "Date field is required";
